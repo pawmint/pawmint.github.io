@@ -1,6 +1,6 @@
 ---
-layout: default
-title: "Jekyll Docs Template"
+layout: index
+title: "Tech'n'Tuts Index"
 ---
 
 ### Get Started
