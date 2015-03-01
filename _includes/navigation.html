@@ -1,4 +1,5 @@
-<ul class="nav nav-list">
+<div id="sidr">
+  <ul class="nav nav-list">
     <li><a href="{{ site.baseurl }}/">Home</a></li>
     {% for section in site.sections %}
         {% assign attr = section[0] %}
@@ -13,4 +14,5 @@
     {% endfor %}
 <!-- List additional links. It is recommended to add a divider
     e.g. <li class=divider></li> first to break up the content. -->
-</ul>
+  </ul>
+</div>

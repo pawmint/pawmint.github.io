@@ -9,7 +9,9 @@
         <meta name="description" content="{{ site.subtitle }}">
 
         <link rel="stylesheet" href="{{ site.baseurl }}/assets/css/bootstrap.min.css">
-        <link rel="stylesheet" href="{{ site.baseurl }}/assets/css/syntax.css">
+	<link rel="stylesheet" href="{{ site.baseurl }}/assets/css/font-awesome.min.css">
+        <link rel="stylesheet" href="{{ site.baseurl }}/assets/css/jquery.sidr.css">
+	<link rel="stylesheet" href="{{ site.baseurl }}/assets/css/syntax.css">
         <link rel="stylesheet" href="{{ site.baseurl }}/assets/css/main.css">
 	<link rel="stylesheet" href="{{ site.baseurl }}/assets/css/custom.css">
     </head>
@@ -22,21 +24,12 @@
                 </div>
             </div>
 
-            <div class="row">
-                {% assign post_count = site.posts|size %}
-                {% if site.navigation != 0 and site.navigation == 1 or post_count > 0 %}
-                    <div id="navigation" class="col-md-3">
-                        {% include navigation.html %}
-                    </div>
+            {% include navigation.html %}
 
-                    <div id="content" class="col-md-9">
-                        {{ content }}
-                    </div>
-                {% else %}
-                    <div id="content" class="col-md-12">
-                        {{ content }}
-                    </div>
-                {% endif %}
+            <div class="row">
+              <div id="content" class="col-md-12">
+                {{ content }}
+              </div>
             </div>
 
             <div class="row">
@@ -98,6 +91,13 @@
 
 	<script src="{{ site.baseurl }}/assets/js/jquery-1.11.2.min.js"></script>
 	<script src="{{ site.baseurl }}/assets/js/bootstrap.min.js"></script>
-	
+	<script src="{{ site.baseurl }}/assets/js/jquery.sidr.min.js"></script>
+
+	<script>
+	  $(document).ready(function() {
+	    $('.toggle-menu').sidr();
+	  });
+	</script>
+
     </body>
 </html>
