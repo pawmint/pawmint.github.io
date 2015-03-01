@@ -13,11 +13,12 @@ codeurl: 'https://github.com/tibotiber/techntuts'
 
 # Default categories (in order) to appear in the navigation
 sections: [
-    ['doc', 'Documentation'],
-    ['tut', 'Tutorial'],
-    ['ref', 'Reference'],
-    ['dev', 'Developers'],
-    ['post', 'Posts']
+    ['web', 'WebApp Side'],
+    ['home', 'Home Side'],
+    ['tools', 'Tools & Methods'],
+    ['deploy', 'Deployment'],
+    ['admin', 'Admin'],
+    ['misc', 'Miscellaneous']
 ]
 
 # Keep as an empty string if served up at the root. If served up at a specific
@@ -25,7 +26,7 @@ sections: [
 baseurl: '/techntuts'
 
 # Dates are not included in permalinks
-permalink: /:categories/:title/
+permalink: /:title/
 
 # Syntax highlighting
 highlighter: pygments
