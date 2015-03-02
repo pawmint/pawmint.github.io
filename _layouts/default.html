@@ -8,96 +8,36 @@
         <title>{% if page.title %} {{ page.title }} | {% endif %}{{ site.title }}</title>
         <meta name="description" content="{{ site.subtitle }}">
 
-        <link rel="stylesheet" href="{{ site.baseurl }}/assets/css/bootstrap.min.css">
+        <link rel="stylesheet" href="{{ site.baseurl }}/assets/css/bootstrap.darkly.css">
 	<link rel="stylesheet" href="{{ site.baseurl }}/assets/css/font-awesome.min.css">
         <link rel="stylesheet" href="{{ site.baseurl }}/assets/css/jquery.sidr.css">
 	<link rel="stylesheet" href="{{ site.baseurl }}/assets/css/syntax.css">
-        <link rel="stylesheet" href="{{ site.baseurl }}/assets/css/main.css">
 	<link rel="stylesheet" href="{{ site.baseurl }}/assets/css/custom.css">
     </head>
     <body>
+      {% include header.html %}
+      <div class="container-fluid">
+	{% include navigation.html %}
 
-        <div class="container-fluid">
-            <div class="row">
-                <div id="header" class="col-md-12">
-                    {% include header.html %}
-                </div>
-            </div>
-
-            {% include navigation.html %}
-
-            <div class="row">
-              <div id="content" class="col-md-12">
-                {{ content }}
-              </div>
-            </div>
-
-            <div class="row">
-                <div id="footer" class="col-md-12">
-                    {% include footer.html %}
-                </div>
-            </div>
+        <div class="row">
+          <div id="content" class="col-md-12">
+            {{ content }}
+          </div>
         </div>
 
-        <script>
-            function orderNav() {
-                var list,
-                    section,
-                    header,
-                    sections = [],
-                    lists = {},
-                    headers = {};
-
-                var navUl = document.querySelectorAll('#navigation ul')[0],
-                    navLis = document.querySelectorAll('#navigation ul li');
-
-                if (!navUl) return;
-
-                for (var i = 0; i < navLis.length; i++) {
-                    var order, li = navLis[i];
-
-                    if (li.classList.contains('nav-header')) {
-                        section = li.textContent || li.innerText;
-                        sections.push(section);
-                        headers[section] = li;
-                        continue;
-                    }
-
-                    if (!lists[section]) {
-                        lists[section] = [];
-                    }
-
-                    order = parseFloat(li.getAttribute('data-order'))
-                    lists[section].push([order, li]);
-                }
-
-                for (var i = 0; i < sections.length; i++) {
-                    section = sections[i];
-                    list = lists[section].sort(function(a, b) {
-                        return a[0] - b[0];
-                    });
-
-                    if (header = headers[section]) {
-                        navUl.appendChild(header);
-                    }
-                    for (var j = 0; j < list.length; j++) {
-                        navUl.appendChild(list[j][1]);
-                    }
-                }
-            }
-
-            if (document.querySelectorAll) orderNav();
-        </script>
-
-	<script src="{{ site.baseurl }}/assets/js/jquery-1.11.2.min.js"></script>
-	<script src="{{ site.baseurl }}/assets/js/bootstrap.min.js"></script>
-	<script src="{{ site.baseurl }}/assets/js/jquery.sidr.min.js"></script>
-
-	<script>
-	  $(document).ready(function() {
-	    $('.toggle-menu').sidr();
-	  });
-	</script>
+        {% include footer.html %}
+      </div>
+      
+      <script src="{{ site.baseurl }}/assets/js/order-nav.js"></script>
+      <script src="{{ site.baseurl }}/assets/js/jquery-1.11.2.min.js"></script>
+      <script src="{{ site.baseurl }}/assets/js/bootstrap.min.js"></script>
+      <script src="{{ site.baseurl }}/assets/js/jquery.sidr.min.js"></script>
+      
+      <script>
+	$(document).ready(function() {
+	  $('.toggle-menu').sidr({side:'right'});
+	});
+      </script>
 
     </body>
 </html>
