@@ -1,18 +1,16 @@
-<div id="sidr">
-  <ul class="nav nav-list">
-    <li><a href="{{ site.baseurl }}/">Home</a></li>
+  <div class="list-group">
+    <a href="{{ site.baseurl }}/" class="list-group-item">Home</a></li>
     {% for section in site.sections %}
         {% assign attr = section[0] %}
         {% assign label = section[1] %}
 
         {% for page in site.categories[attr] %}
             {% if forloop.first %}
-                <li class=nav-header>{{ label }}</li>
+                <span class="list-group-item category">// {{ label }}</span>
             {% endif %}
-            <li data-order="{{ page.order }}"><a href="{{ site.baseurl }}{{ page.url }}">// {{ page.title }}</a></li>
+            <a data-order="{{ page.order }}" href="{{ site.baseurl }}{{ page.url }}" class="list-group-item">{{ page.title }}</a>
         {% endfor %}
     {% endfor %}
 <!-- List additional links. It is recommended to add a divider
     e.g. <li class=divider></li> first to break up the content. -->
-  </ul>
-</div>
+  </div>

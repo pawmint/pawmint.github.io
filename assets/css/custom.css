@@ -1,3 +1,15 @@
-.site-index {
-    margin-bottom: 50px;
+body {
+    margin-top: 60px;
+}
+
+#navigation {
+    margin-top: 20px;
+}
+
+.list-group-item.category {
+    background-color: #00bc8c;
+}
+
+a.list-group-item, a.list-group-item:hover {
+    color: white;
 }
