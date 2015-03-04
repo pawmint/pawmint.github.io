@@ -1,7 +1,3 @@
-body {
-    margin-top: 60px;
-}
-
 #navigation {
     margin-top: 20px;
 }
@@ -10,6 +6,35 @@ body {
     background-color: #00bc8c;
 }
 
-a.list-group-item, a.list-group-item:hover {
+a.list-group-item,
+a.list-group-item:hover {
     color: white;
+}
+
+footer {
+    width: 100%;
+    background-color: #303030;
+}
+
+.footer-content {
+    float: left;
+    padding: 19.5px 15px;
+    height: 60px;
+}
+
+html, body {
+    height: 100%;
+}
+
+.main-wrapper {
+    min-height: 100%;
+    height: auto !important;
+    height: 100%;
+    margin: 0 auto -60px;
+    padding-top: 60px;
+    padding-bottom: 42px;
+}
+
+.footer, .push {
+    height: 60px;
 }
