@@ -1,5 +1,12 @@
-  <div class="list-group">
-    <a href="{{ site.baseurl }}/" class="list-group-item">Home</a></li>
+<div class="inner-addon right-addon">
+  <input type="text" id="search-input" class="form-control">
+  <i class="glyphicon glyphicon-search"></i>
+</div>
+<div class="list-group" id="search-results">
+</div>
+
+<div class="list-group">
+    <a href="{{ site.baseurl }}/" class="list-group-item">Home</a>
     {% for section in site.sections %}
         {% assign attr = section[0] %}
         {% assign label = section[1] %}
@@ -14,3 +21,14 @@
 <!-- List additional links. It is recommended to add a divider
     e.g. <li class=divider></li> first to break up the content. -->
   </div>
+
+<script src="{{ site.baseurl }}/assets/js/jekyll-search.js"></script>
+
+<script>
+  SimpleJekyllSearch.init({
+  searchInput: document.getElementById('search-input'),
+  resultsContainer: document.getElementById('search-results'),
+  dataSource: '{{ site.baseurl }}/search.json',
+  searchResultTemplate: '<a href="{url}" class="list-group-item">{title}</a>'
+  })
+</script>

@@ -38,3 +38,22 @@ html, body {
 .footer, .push {
     height: 60px;
 }
+
+
+.inner-addon {
+    position: relative;
+}
+.inner-addon .glyphicon {
+    position: absolute;
+    padding: 15px;
+    pointer-events: none;
+}
+.left-addon .glyphicon  { left:  0px;}
+.right-addon .glyphicon { right: 0px;}
+.left-addon input  { padding-left:  30px; }
+.right-addon input { padding-right: 30px; }
+.form-control {
+    border: solid #464545 1px;
+    background-color: #303030;
+    color: white;
+}
