@@ -1,5 +1,5 @@
 <div class="inner-addon right-addon">
-  <input type="text" id="search-input" class="form-control">
+  <input type="text" id="search-input" class="form-control" onkeydown="onkeypressed(event, this);">
   <i class="glyphicon glyphicon-search"></i>
 </div>
 <div class="list-group" id="search-results">
@@ -31,4 +31,13 @@
   dataSource: '{{ site.baseurl }}/search.json',
   searchResultTemplate: '<a href="{url}" class="list-group-item">{title}</a>'
   })
+</script>
+
+<script>
+  function onkeypressed(evt, input) {
+  var code = evt.charCode || evt.keyCode;
+  if (code == 27) {
+  input.value = '';
+  }
+  }
 </script>
