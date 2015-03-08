@@ -1,5 +1,5 @@
 ---
-layout: index
+layout: page
 title: "Tech'n'Tuts Index"
 ---
 
