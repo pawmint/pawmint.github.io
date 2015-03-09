@@ -33,7 +33,7 @@ date: 2014-03-01 12:00:00
 ```
 
 ### Managing categories
-Categories are listed in `_config.yml` in the `sections` object. Each line defines own category, the first element being the category id used in the posts' [front matter](http://jekyllrb.com/docs/frontmatter/). Categories will appear in the navigation menu when their first post is created.
+Categories are listed in `_config.yml` in the `sections` object. Each line defines own category, the first element being the category id used in the posts' [front matter](http://jekyllrb.com/docs/frontmatter/). Categories will appear in the navigation menu when their first post is created. Currently, the categories available are `web`, `home`, `tools`, `deploy`, `admin` and `misc`.
 
 ### Navigation order
 To reorder elements in the navigation menu, simply add an order attribute to the [front matter](http://jekyllrb.com/docs/frontmatter/) of the page and the navigation links will be sorted accordingly (within it's section).
