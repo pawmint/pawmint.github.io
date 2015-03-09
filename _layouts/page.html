@@ -4,8 +4,17 @@ layout: default
 <div id="content" class="col-xs-12 col-sm-8 col-lg-9">
   <div class="page-header">
     <h2>{{ page.title }}
-        {% if page.subtitle %}<small>{{ page.subtitle }}</small>{% endif %}
+      {% if page.subtitle %}<small>{{ page.subtitle }}</small>{% endif %}
+      {% if page.category %}<span class="category">&mdash;{{ page.category }}</span>{% endif %}
     </h2>
+    {% if page.tags %}
+    <div class="tags">
+      <span class="glyphicon glyphicon-tags" aria-hidden="true"></span>
+      {% for tag in page.tags %}
+      {{ tag }}
+      {% endfor %}
+    </div>
+    {% endif %}
   </div>
   {{ content }}
 </div>

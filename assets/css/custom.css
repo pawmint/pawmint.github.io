@@ -57,3 +57,18 @@ html, body {
     background-color: #303030;
     color: white;
 }
+
+.category {
+    font-size: 50%;
+    color: #999999;
+}
+.tags {
+    font-size: 15px;
+    color: #999999;
+    margin-top: -10px;
+    margin-bottom: 12px;
+}
+.tags .glyphicon {
+    margin-right: 8px;
+    font-size: 80%;
+}
