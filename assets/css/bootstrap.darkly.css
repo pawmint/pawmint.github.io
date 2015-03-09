@@ -1210,8 +1210,8 @@ h2,
 .h2,
 h3,
 .h3 {
-  margin-top: 21px;
-  margin-bottom: 10.5px;
+  margin-top: 45px;
+  margin-bottom: 18px;
 }
 h1 small,
 .h1 small,
@@ -1233,8 +1233,8 @@ h5,
 .h5,
 h6,
 .h6 {
-  margin-top: 10.5px;
-  margin-bottom: 10.5px;
+  margin-top: 22.5px;
+  margin-bottom: 12px;
 }
 h4 small,
 .h4 small,
@@ -1512,11 +1512,11 @@ samp {
   font-family: Menlo, Monaco, Consolas, "Courier New", monospace;
 }
 code {
-  padding: 2px 4px;
+  padding: 2px 5px;
   font-size: 90%;
-  color: #c7254e;
-  background-color: #f9f2f4;
-  border-radius: 4px;
+  color: #ffffff;
+  background-color: #464545;
+  border-radius: 6px;
 }
 kbd {
   padding: 2px 4px;
@@ -1542,9 +1542,9 @@ pre {
   line-height: 1.42857143;
   word-break: break-all;
   word-wrap: break-word;
-  color: #303030;
-  background-color: #ebebeb;
-  border: 1px solid #cccccc;
+  color: #ffffff;
+  background-color: #303030;
+  border: 1px solid transparent;
   border-radius: 4px;
 }
 pre code {
