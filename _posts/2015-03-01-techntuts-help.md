@@ -21,7 +21,7 @@ where `title` is the title of page, `category` is one of the categories defined 
 ruby bin/jekyll-page "My New Page" tools
 ```
 
-will produce a file _posts/2015-03-01-my-new-page.md with the [front matter](http://jekyllrb.com/docs/frontmatter/) already defined:
+will produce a file `_posts/2015-03-01-my-new-page.md` with the [front matter](http://jekyllrb.com/docs/frontmatter/) already defined:
 
 ```
 ---
