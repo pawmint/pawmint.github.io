@@ -58,7 +58,7 @@ html, body {
     color: white;
 }
 
-.category {
+.page-header .category {
     font-size: 50%;
     color: #999999;
 }
