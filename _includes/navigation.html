@@ -6,21 +6,29 @@
 </div>
 
 <div class="list-group">
-    <a href="{{ site.baseurl }}/" class="list-group-item">Home</a>
-    {% for section in site.sections %}
-        {% assign attr = section[0] %}
-        {% assign label = section[1] %}
+  <a href="{{ site.baseurl }}/" class="list-group-item">Home</a>
+  {% for section in site.sections %}
+  {% assign attr = section[0] %}
+  {% assign label = section[1] %}
 
-        {% for page in site.categories[attr] %}
-            {% if forloop.first %}
-                <span class="list-group-item category">// {{ label }}</span>
-            {% endif %}
-            <a data-order="{{ page.order }}" href="{{ site.baseurl }}{{ page.url }}" class="list-group-item">{{ page.title }}</a>
-        {% endfor %}
-    {% endfor %}
-<!-- List additional links. It is recommended to add a divider
-    e.g. <li class=divider></li> first to break up the content. -->
-  </div>
+  {% for post in site.categories[attr] %}
+  {% if forloop.first %}
+  <span class="list-group-item category">// {{ label }}</span>
+  {% endif %}
+  {% if post.archive %}
+  {% if page.archive %}
+  <a data-order="{{ post.order }}" href="{{ site.baseurl }}{{ post.url }}" class="list-group-item">{{ post.title }}</a>
+  {% endif %}
+  {% else %}
+  {% unless page.archive %}
+  <a data-order="{{ post.order }}" href="{{ site.baseurl }}{{ post.url }}" class="list-group-item">{{ post.title }}</a>
+  {% endunless %}
+  {% endif %}
+  {% endfor %}
+  {% endfor %}
+  <!-- List additional links. It is recommended to add a divider
+       e.g. <li class=divider></li> first to break up the content. -->
+</div>
 
 <script src="{{ site.baseurl }}/assets/js/christian-fei-jekyll-search.js"></script>
 

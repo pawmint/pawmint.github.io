@@ -5,7 +5,10 @@ layout: default
   <div class="page-header">
     <h2>{{ page.title }}
       {% if page.subtitle %}<small>{{ page.subtitle }}</small>{% endif %}
-      {% if page.category %}<span class="category">&mdash;{{ page.category }}</span>{% endif %}
+      {% if page.category %}
+      <span class="category">&mdash;{{ page.category }}
+	{% if page.archive %}[archived]{% endif%}
+      </span>{% endif %}
     </h2>
     {% if page.tags %}
     <div class="tags">
