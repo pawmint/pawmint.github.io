@@ -72,3 +72,10 @@ html, body {
     margin-right: 8px;
     font-size: 80%;
 }
+.tags .edit-link {
+    color: #999999;
+}
+.tags .edit-link:hover {
+    color: #0ce3ac;
+    text-decoration: none;
+}
