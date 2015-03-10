@@ -3,7 +3,7 @@ title: "Tech'n'Tuts"
 subtitle: "PAWM International's Documentation Platform"
 
 # URL to source code, used in _includes/footer.html
-codeurl: 'https://github.com/tibotiber/techntuts'
+codeurl: 'https://github.com/pawmint/techntuts'
 
 # Default categories (in order) to appear in the navigation
 sections: [
