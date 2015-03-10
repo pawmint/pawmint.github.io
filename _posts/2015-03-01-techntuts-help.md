@@ -57,14 +57,17 @@ For convenience, a new directory will be created called `_pages` which contains 
 
 ## Tagging for better search results
 The search bar included in the main menu only check posts titles, categories and tags. To add tags to enable easier post retrieval through search, simply add the following to the post's front matter:
+
 ```
 tags: topic1 topic2 topic3
 ```
+
 Additionally, a full-text search is available in the footer. However, it may get heavy to load if there are many posts in the future.
 
 
 ## Archiving posts
 To archive a post, simply add the following in the front matter of the post:
+
 ```
 archive: true
 ```
