@@ -1,3 +1,5 @@
-[![Bitdeli Badge](https://d2weczhvl823v0.cloudfront.net/bruth/jekyll-docs-template/trend.png)](https://bitdeli.com/free "Bitdeli Badge")
+# PAWMint Tech'n'Tuts
 
-Read the docs: http://bruth.github.io/jekyll-docs-template
+Please check our doc on http://pawmint.github.io/techntuts
+
+* For a technical doc about the tech'n'tuts itself: http://bruth.github.io/jekyll-docs-template
