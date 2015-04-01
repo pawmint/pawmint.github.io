@@ -1,0 +1,95 @@
+---
+layout: page
+title: "Mobile applications with EmberJS"
+category: misc
+date: 2015-04-01 10:36:47
+---
+
+# Use cases
+
+* Ubipad, a mobile app to gather some ground-truth from the caregivers.
+
+# Technical overview
+
+We use the javascript client framework "Ember.JS" to create beautiful single-page web application.
+
+We then use Phonegap/Cordova to transform this web app into a smartphone application, for any OS we want.
+
+# Getting started
+
+## Creating the project
+
+```
+npm install -g ember-cli
+npm install -g bower
+ember new <my-app-name>
+
+ember g cordova-init com.reverse.domain --platform=android
+```
+
+## Cloning an existing project
+
+```
+git clone <repository_url>
+npm install
+bower install
+ember cordova:prepare
+```
+
+## Running the app
+
+```
+ember server
+# Access it through localhost:4200
+# The server will automatically reload at any change in the filesystem
+```
+
+## Building for Android
+
+```
+ember cordova:build --environment production --platform android
+ember cordova emulate android
+```
+
+The android package is available at `cordova/platforms/android/ant-build/<name>-debug.apk`
+
+# Learning ember.js
+
+* Start following the [EmberJS TodoMVC tutorial](http://guides.emberjs.com/v1.10.0/getting-started/)
+* Then follow the [TodoMVC with EmberCLI](http://www.cubicleapps.com/articles/todo-mvc-with-ember-cli-part-1). Although the end-result is same, it has little redundancy with the previous tutorial, and gives a great overview of EmberCLI's structure.
+
+* Be aware that Ember is probably unlike anything you have used before, and it may take some time before you actually feel confident using it. Don't despair, once you get used to it, it's awesome ;).
+
+## Connect Ember with a backend server
+
+So far, our Ember app have only been connected with a Python [Flask](http://flask.pocoo.org/) server, as UbismartV3 is't ready for it yet. Yet if you want to bind it with Ubismart, have a look at [Ember-data-sails-adapter](https://github.com/bmac/ember-data-sails-adapter).
+
+## CSS
+
+TODO: This section may deserve an article on its own.
+
+### Using Foundation 5
+
+`ember install:bower foundation`
+
+Update your `Brocfile.js`:
+
+```
+// Use `app.import` to add additional libraries to the generated
+...
+// along with the exports of each modules as its value.
+
+app.import("bower_components/foundation/css/foundation.css");
+app.import("bower_components/foundation/css/normalize.css");
+app.import("bower_components/foundation/js/foundation.min.js");``
+
+...
+
+module.exports = app.toTree();
+```
+
+I also recommend that you look at least at the Foundation [Grid structure](http://foundation.zurb.com/docs/components/grid.html) and the [Kitchen sink](http://foundation.zurb.com/docs/components/kitchen_sink.html).
+
+# Opening
+
+* Re-implement ubismart frontend with EmberJS (long-term)
