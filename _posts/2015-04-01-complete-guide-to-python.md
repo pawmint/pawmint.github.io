@@ -179,14 +179,11 @@ Scientific Programming is a huge topic, and it would require a whole document as
 
 Here is a little summary:
 
-To begin, use **IPython Notebook** (described above) for coding, it works great for scientific workflow. To make sure you can display plots within your notebook, start it by:
-```
-%matplotlib inline
-```
+To begin, use **IPython Notebook** (described above) for coding, it works great for scientific workflow.
 
-Then, start with **Numpy**, it grants *vectorial programming* capabilities to python, same as in matlab. For example, you can describe a function like y = 6 * x ** 2 / np.sqrt(x), define x as an interval [min, max], and you'll get y(x).
+Then, start with **Numpy**, it grants *vectorial programming* capabilities to python, same as in matlab. For example, you can describe a function like $y = 6 * x ** 2 / np.sqrt(x)$, define x as an interval [min, max], and you'll get y(x).
 
-You can then *display data and functions* with **Matplotlib**. Check J.R. Johansson's tutorial [Matplotlib - 2D and 3D plotting in Python](http://nbviewer.ipython.org/github/jrjohansson/scientific-python-lectures/blob/master/Lecture-4-Matplotlib.ipynb) (that's actually an IPython document).
+You can then *display data and functions* with [Bokeh](http://bokeh.pydata.org/en/latest/). I don't recommend using Matplotlib, which is very powerful, but also much more complicated, and the philosophy behind isn't as beautiful as **Bokeh**, which aims to be data-driven.
 
 If you have to deal with *datasets*, use **Pandas**, it provides a DataFrame structure and improves Numpy. That's particularly good for dealing with *Time Series*.
 
