@@ -39,13 +39,13 @@ Moreover, don't forget that Tech'N'Tuts is under a Git versioning. If you want t
     * [Git tips]({% post_url 2015-03-01-git-tips %})
     * [Tmux tips]({% post_url 2015-03-01-tmux-tips %})
 * Deployment
-    * [Demo setup]({% 2015-03-01-demo-setup %})
-    * [Normandie]({% 2015-03-01-normandie %})
+    * [Demo setup]({% post_url 2015-03-01-demo-setup %})
+    * [Normandie]({% post_url 2015-03-01-normandie %})
 * Admin
-    * [Our collaborative platform]({% 2015-03-09-our-collaborative-platforms %})
-    * [Hardware inventory]({% 2015-03-01-hardware-inventory %})
+    * [Our collaborative platform]({% post_url 2015-03-09-our-collaborative-platforms %})
+    * [Hardware inventory]({% post_url 2015-03-01-hardware-inventory %})
 * Misc
-    * [Mobile applications with EmberJS]({% 2015-04-01-mobile-application-with-emberjs %})
+    * [Mobile applications with EmberJS]({% post_url 2015-04-01-mobile-applications-with-emberjs %})
     * [Tech'N'Tuts Structure]({% post_url 2015-04-01-techntuts-structure %})
 
 ### Archived
@@ -61,9 +61,9 @@ None, so far
 * A README
 * A cool favicon with the pawmint logo
 * Empty pages
-    * [Hardware inventory]({% 2015-03-01-hardware-inventory %})
-    * [Demo setup]({% 2015-03-01-demo-setup %})
-    * [Normandie]({% 2015-03-01-normandie %})
+    * [Hardware inventory]({% post_url 2015-03-01-hardware-inventory %})
+    * [Demo setup]({% post_url 2015-03-01-demo-setup %})
+    * [Normandie]({% post_url 2015-03-01-normandie %})
     * [Git tips]({% post_url 2015-03-01-git-tips %})
     * [Tmux tips]({% post_url 2015-03-01-tmux-tips %})
 * Incomplete pages
