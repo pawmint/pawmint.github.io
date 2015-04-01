@@ -35,7 +35,7 @@ Moreover, don't forget that Tech'N'Tuts is under a Git versioning. If you want t
     * [Getting started with the gateway]({% post_url 2015-03-01-getting-started-with-the-gateway %})
 * Tools & Methods
     * [Complete guide to python]({% post_url 2015-04-01-complete-guide-to-python %})
-    * [Tech'n'tuts help]({% post_url 2015-03-01-techntuts-help %})
+    * [Tech'n'tuts technical help]({% post_url 2015-03-01-techntuts-help %})
     * [Git tips]({% post_url 2015-03-01-git-tips %})
     * [Tmux tips]({% post_url 2015-03-01-tmux-tips %})
 * Deployment
@@ -67,10 +67,6 @@ None, so far
     * [Git tips]({% post_url 2015-03-01-git-tips %})
     * [Tmux tips]({% post_url 2015-03-01-tmux-tips %})
 * Incomplete pages
-    * [Tech'n'tuts help]({% post_url 2015-03-01-techntuts-help %})
-        * Romain: This is all about Jekyll, not Tech'N'Tuts. Either make it as part of [Tech'N'Tuts Structure]({% post_url 2015-04-01-techntuts-structure %}) or rename it **Jekyll help**?
-        * Add a [Link to the templates](http://jekyllrb.com/docs/templates) and trick to use internal links and anchors
-        * Tutorial to install Jekyll locally for testing before pushing
     * [Getting started with the gateway]({% post_url 2015-03-01-getting-started-with-the-gateway %})
 * Fixes
     * [Complete guide to python]({% post_url 2015-04-01-complete-guide-to-python %})
