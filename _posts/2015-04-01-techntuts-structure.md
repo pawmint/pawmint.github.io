@@ -37,7 +37,7 @@ Moreover, don't forget that Tech'N'Tuts is under a Git versioning. If you want t
     * [Complete guide to python]({% post_url 2015-04-01-complete-guide-to-python %})
     * [Tech'n'tuts technical help]({% post_url 2015-03-01-techntuts-help %})
     * [Git tips]({% post_url 2015-03-01-git-tips %})
-    * [Tmux tips]({% post_url 2015-03-01-tmux-tips %})
+    * [Technical kickstart]({% post_url 2015-05-13-technical-kickstart %})
 * Deployment
     * [Demo setup]({% post_url 2015-03-01-demo-setup %})
     * [Normandie]({% post_url 2015-03-01-normandie %})
@@ -98,7 +98,6 @@ Romain: As an alternative use, we may also use Tech'N'Tuts as a journal log and/
 * [Demo setup]({% post_url 2015-03-01-demo-setup %})
 * [Normandie]({% post_url 2015-03-01-normandie %})
 * [Git tips]({% post_url 2015-03-01-git-tips %})
-* [Tmux tips]({% post_url 2015-03-01-tmux-tips %})
 
 #### Incomplete pages
 
