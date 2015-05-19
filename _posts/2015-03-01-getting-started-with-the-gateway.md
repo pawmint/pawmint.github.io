@@ -10,20 +10,20 @@ date: 2015-03-01 20:08:03
 ## How to run the setup script
 
 For this step, you will need the following material:
+
 * one Raspberry Pi and its power cable
 * one SD card suitable to your Raspberry Pi version
 * one Ethernet cable, and one Ethernet plug
 * an access to the internet
 
-
-[x] You will need to install the Operating System and some packages on the SD carte (the minimum size and speed of your SD card depend on raspberry pi model). In our case it was Raspberry Pi B with SD carte of 8 Mb 4 class.
+1. You will need to install the Operating System and some packages on the SD carte (the minimum size and speed of your SD card depend on raspberry pi model). In our case it was Raspberry Pi B with SD carte of 8 Mb 4 class.
 Therefore, download the following git repository under zip file format: [Clic Here] (https://github.com/pawmint/raspberry_setup) Extract it in your local directory.
 
 
-[x] Insert the card into the PC, and verify the name of its partition by typing df -h in the terminal. You will see all the partitions of both your local machine and the SD card. Here is what you get:
+2. Insert the card into the PC, and verify the name of its partition by typing df -h in the terminal. You will see all the partitions of both your local machine and the SD card. Here is what you get:
 
 *When the SD card is not inserted*
-'''sh
+```sh
         laure@laure-HP-Pavilion-TS-14-Notebook-PC:~$ df -h 
         Sys. de fichiers Taille Utilisé Dispo Uti% Monté sur 
         /dev/sda7           28G    5.5G   21G  22% / 
@@ -36,8 +36,8 @@ Therefore, download the following git repository under zip file format: [Clic He
         /dev/sda4          649G    285G  364G  44% /media/windows 
         /dev/sda2          256M    112M  145M  44% /boot/efi 
         /dev/sda1          400M    287M  114M  72% /media/laure/WINRE 
+```
 
-'''
 *When SD card is inserted*
 '''sh
         laure@laure-HP-Pavilion-TS-14-Notebook-PC:~$ df -H 
@@ -56,7 +56,7 @@ Therefore, download the following git repository under zip file format: [Clic He
         /dev/mmcblk0p1      59M     10M   49M  17% /media/laure/boot 
 '''
 
-[x] Run the firmwareUpdate.sh - contained in the previously downloaded git file - as root (sudo), and follow the execution. Beware: make sure that the device proposed to burn is the SD card, otherwise all data on other partition will be lost. Here is what you get: 
+3. Run the firmwareUpdate.sh - contained in the previously downloaded git file - as root (sudo), and follow the execution. Beware: make sure that the device proposed to burn is the SD card, otherwise all data on other partition will be lost. Here is what you get: 
 
 '''sh
         laure@laure-HP-Pavilion-TS-14-Notebook-PC:~$ cd Bureau/LienIPAL/Raspberry/raspberry_setup-master 
@@ -93,7 +93,7 @@ Therefore, download the following git repository under zip file format: [Clic He
         Enregistre : «raspbian_latest» 
 '''
 
-[x] When the system is installed on the card, insert it into the SD card slot on the Raspberry, connected to Ethernet network.          
+4. When the system is installed on the card, insert it into the SD card slot on the Raspberry, connected to Ethernet network.          
 Then we identify Raspberry IP (I used nmap command to scan network [How to use nmap command] (https://www.raspberrypi.org/documentation/troubleshooting/hardware/networking/ip-address.md)). 
 
 * Install nmap
@@ -115,16 +115,16 @@ Then we identify Raspberry IP (I used nmap command to scan network [How to use n
         Nmap done: 256 IP addresses (4 hosts up) scanned in 2.41 seconds'''
  Here you can see a device with hostname raspberrypi has IP address 192.168.1.8.
 
-[x] At this step we can remotely connect to RaspberryPi from our PC 
+5. At this step we can remotely connect to RaspberryPi from our PC 
 '''sh   
 ssh pi@<IP> 
 password: raspberry 
 '''
 
-[x] In order to install some other packages, change script remoteSetup.sh by setting Raspberry IP  and run remoteSetup.sh as root 
+6. In order to install some other packages, change script remoteSetup.sh by setting Raspberry IP  and run remoteSetup.sh as root 
 It is a last step, but in order to improve and facilitate installation process we should burn the image of complete system with all packages 
 
-[x] Remove the SD card and reinsert in PC. Then verify the size of its partition with df -h, as you did earlier. dd command duplicates partition into bootable image, 
+7. Remove the SD card and reinsert in PC. Then verify the size of its partition with df -h, as you did earlier. dd command duplicates partition into bootable image, 
 '''sh        
 sudo dd bs=<byte size> if=<source> of=<target> count=<number of blocks> 
 source= partition on the SD-card, 
