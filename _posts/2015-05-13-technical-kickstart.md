@@ -74,13 +74,13 @@ TODO (create a ready to use dotfile)
 
 # LIST OF ALL TUTORIALS mentionned above
 
-Linux Dual Boot: http://doc.ubuntu-fr.org/cohabitation_ubuntu_windows
-Install Vim: https://basecamp.com/1972788/projects/1029605/documents/8556069)
-Use Vim: http://www.labnol.org/internet/learning-vim-for-beginners/28820/ 
-Install Tmux: https://basecamp.com/1972788/projects/1029605/documents/8556069)
-Use Tmux: http://www.sitepoint.com/tmux-a-simple-start/
-Install Virtualenv: http://www.silverwareconsulting.com/index.cfm/2012/7/24/Getting-Started-wit….
-Use GitHub: http://christopheducamp.com/2013/12/15/github-pour-nuls-partie-1/)
+* Linux Dual Boot: http://doc.ubuntu-fr.org/cohabitation_ubuntu_windows
+* Install Vim: https://basecamp.com/1972788/projects/1029605/documents/8556069)
+* Use Vim: http://www.labnol.org/internet/learning-vim-for-beginners/28820/ 
+* Install Tmux: https://basecamp.com/1972788/projects/1029605/documents/8556069)
+* Use Tmux: http://www.sitepoint.com/tmux-a-simple-start/
+* Install Virtualenv: http://www.silverwareconsulting.com/index.cfm/2012/7/24/Getting-Started-wit….
+* Use GitHub: http://christopheducamp.com/2013/12/15/github-pour-nuls-partie-1/)
 
 
 # Get started with the hardware part!
