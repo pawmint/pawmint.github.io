@@ -16,7 +16,7 @@ The PAWMint team uses agile methods to develop the projects and smart tools to c
 * Techntuts is a blog with tutorial dedicated to our project
 * Googledoc is the place where we share docs
                          
-All these networks will allow you to communicate with the other members of the team. 
+All these networks will allow you to communicate with the other members of the team. Please refer to the page [Our Collaborative Platforms] (http://pawmint.github.io/techntuts/our-collaborative-platforms/) to install them all. 
 
 # Setup a coding environment:
 

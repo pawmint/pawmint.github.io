@@ -23,7 +23,7 @@ For this step, you will need the following material:
 ### Download raspberry setup repo
 
 You will need to install the Operating System and some packages on the SD carte (the minimum size and speed of your SD card depend on raspberry pi model). In our case it was Raspberry Pi B with SD carte of 8 Mb 4 class.
-Therefore, download the following git repository under zip file format: [Clic Here] (https://github.com/pawmint/raspberry_setup) Extract it in your local directory.
+Therefore, download the following git repository under zip file format: [Clic Here] (https://github.com/pawmint/raspberry_setup).  Extract it in your local directory.
 
 
 
