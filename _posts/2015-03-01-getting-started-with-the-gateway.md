@@ -1,6 +1,6 @@
 ---
 layout: page
-title: "Getting Started with the Gateway"
+title: "Setting up a Raspberry Pi"
 category: home
 date: 2015-03-01 20:08:03
 ---
@@ -22,9 +22,12 @@ For this step, you will need the following material:
 
 ### Download raspberry setup repo
 
-You will need to install the Operating System and some packages on the SD carte (the minimum size and speed of your SD card depend on raspberry pi model). In our case it was Raspberry Pi B with SD carte of 8 Mb 4 class.
-Therefore, download the following git repository under zip file format: [Clic Here] (https://github.com/pawmint/raspberry_setup).  Extract it in your local directory.
-
+You will need to install the Operating System and some packages on the SD card (the minimum size and speed of your SD card depend on raspberry pi model). In our case it was Raspberry Pi B with SD carte of 8 Mb 4 class.
+Therefore, clone the following raspberrysetup git repository in your local directory:
+mkdir IPALdepo
+git init
+git clone https://github.com/pawmint/raspberry_setup.git
+Open it and make sure it contains the file ./firmwareUpdate.
 
 
 ### Insert and explore your SD card
@@ -73,51 +76,24 @@ Insert the card into the PC, and verify the name of its partition by typing df -
 ```
 
 ### Run the firmwareUpdate
+Download the latest raspbian version from the internet:
+wget http://downloads.raspberrypi.org/raspbian_latest 
 
-Run the firmwareUpdate.sh - contained in the previously downloaded git file - as root (sudo), and follow the execution. Beware: make sure that the device proposed to burn is the SD card, otherwise all data on other partition will be lost. Here is what you get: 
+Wait for it to download and extract it in your raspberryPi_setup-master folder next to ./firmwareUpdate. Then open the ./firmwareUpdate:
+vim ./firmwareUpdate.sh
 
-```
-   
-   laure@laure-HP-Pavilion-TS-14-Notebook-PC:~$ cd Bureau/LienIPAL/Raspberry/raspberry_setup-master 
-   
-   laure@laure-HP-Pavilion-TS-14-Notebook-PC:~/Bureau/LienIPAL/Raspberry/raspberry_setup-master$ sudo ./firmwareUpdate.sh 
-   
-   [sudo] password for laure: 
+Change the IMG_VERSION and write the name of the extracted .img file from raspbian latest (without the .img).
 
-```
-        ---------------------------------------------------------- 
-        Burning eMMC flasher of Rasbian for Raspberry Pi on SD card. 
+Run the firmwareUpdate.sh as root and follow the execution:
+sudo firmwareUpdate.sh
+Beware: make sure that the device proposed to burn is the SD card, otherwise all data on other partition will be lost. 
 
-        Getting firmware image 
-        --2015-05-18 11:36:39--  http://downloads.raspberrypi.org/raspbian_latest 
-        Résolution de downloads.raspberrypi.org (downloads.raspberrypi.org)... 93.93.128.211, 93.93.128.230, 93.93.130.39, ... 
-        Connexion vers downloads.raspberrypi.org (downloads.raspberrypi.org)|93.93.128.211|:80... connecté. 
-        requête HTTP transmise, en attente de la réponse... 302 Found 
-        Emplacement: http://downloads.raspberrypi.org/raspbian/images/raspbian-2015-05-07/2015-05-05-raspbian-wheezy.zip [suivant] 
-        --2015-05-18 11:36:41--  http://downloads.raspberrypi.org/raspbian/images/raspbian-2015-05-07/2015-05-05-raspbian-wheezy.zip 
-        Réutilisation de la connexion existante vers downloads.raspberrypi.org:80. 
-        requête HTTP transmise, en attente de la réponse... 302 Found 
-        Emplacement: http://director.downloads.raspberrypi.org/raspbian/images/raspbian-2015-05-07/2015-05-05-raspbian-wheezy.zip [suivant] 
-        --2015-05-18 11:36:41--  http://director.downloads.raspberrypi.org/raspbian/images/raspbian-2015-05-07/2015-05-05-raspbian-wheezy.zip 
-        Résolution de director.downloads.raspberrypi.org (director.downloads.raspberrypi.org)... 93.93.130.39, 93.93.130.214, 93.93.128.211, ... 
-        Réutilisation de la connexion existante vers downloads.raspberrypi.org:80. 
-        requête HTTP transmise, en attente de la réponse... 302 Moved temporarily 
-        Emplacement: http://files.velocix.com/c1410/newdownloads/raspbian/images/raspbian-2015-05-07/2015-05-05-raspbian-wheezy.zip [suivant] 
-        --2015-05-18 11:36:42--  http://files.velocix.com/c1410/newdownloads/raspbian/images/raspbian-2015-05-07/2015-05-05-raspbian-wheezy.zip 
-        Résolution de files.velocix.com (files.velocix.com)... 212.187.212.226 
-        Connexion vers files.velocix.com (files.velocix.com)|212.187.212.226|:80... connecté. 
-        requête HTTP transmise, en attente de la réponse... 302 Found 
-        Emplacement: http://202.166.85.154/bt/0e19598eba0e05d0be045394081575189cdaf075/data/2015-05-05-raspbian-wheezy.zip [suivant] 
-        --2015-05-18 11:36:43--  http://202.166.85.154/bt/0e19598eba0e05d0be045394081575189cdaf075/data/2015-05-05-raspbian-wheezy.zip 
-        Connexion vers 202.166.85.154:80... connecté. 
-        requête HTTP transmise, en attente de la réponse... 200 OK 
-        Taille : 1038523231 (990M) [application/zip] 
-        Enregistre : «raspbian_latest» 
+Now just do what you are asked for!
 
-        
+
 ### Identifying our Raspberry s IP
 
-When the system is installed on the card, insert it into the SD card slot on the Raspberry, connected to Ethernet network.          
+Once the system is installed on the card, insert it into the SD card slot on the Raspberry, connected to Ethernet network.          
 Then we identify Raspberry IP (I used nmap command to scan network [How to use nmap command] (https://www.raspberrypi.org/documentation/troubleshooting/hardware/networking/ip-address.md)). 
 
 
@@ -142,18 +118,50 @@ Nmap done: 256 IP addresses (4 hosts up) scanned in 2.41 second
 ```
 
 Here you can see a device with hostname raspberrypi has IP address 192.168.1.8.
+I get the IP 192.168.2.33 so it's the one I will use for this presentation.
 
+### Connect Raspberry to your PC
 
-### Connect Raspberry to PC
-
-At this step we can remotely connect to RaspberryPi from our PC 
-
-```   
-
-ssh pi@<IP> 
+At this step we can remotely connect to RaspberryPi from our PC by entering:
+ssh pi@<IP>  
 password: raspberry 
 
+
+### Configure to make your life easier
+
+Two things left to go through, in order to make your everyday life easier. Here's what we'll do: 
+- register pi@192.168.2.33 to save us from typing the IP every time we want to ssh connect.
+- create a key and a public key (=keyhole of our RP) to be able to access the RP without entering the password every time.
+
+To save the IP and port, create a .ssh/config file and edit it (vim .ssh/config) by writing:
+
 ```
+Host pi
+Hostname 192.168.2.33
+User pi
+```
+
+To create the key-keyhole system:
+
+```
+ssh-keygen -t rsa -C "RaspberryIPAL" 
+
+ Generating public/private rsa key pair. 
+ Enter file in which to save the key (/home/laure/.ssh/id_rsa): /home/laure/.ssh/pi_rsa 
+ Enter passphrase (empty for no passphrase): 
+ Enter same passphrase again: 
+ Your identification has been saved in /home/laure/.ssh/pi_rsa. 
+ Your public key has been saved in /home/laure/.ssh/pi_rsa.pub. 
+ The key fingerprint is: 
+ db:86:3c:fd:35:b0:5d:15:82:5d:0f:62:8f:7f:9b:d5 RaspberryIPAL
+```
+
+We can see that a keyhole (```Your public key has been saved in /home/laure/.ssh/pi_rsa.pub.```) and a key (```db:86:3c:fd:35:b0:5d:15:82:5d:0f:62:8f:7f:9b:d5 RaspberryIPAL```) have been generated. 
+ Now we need to set our keyhole on our Raspberry. We will save it in the pre configured “allowed keys” folder. Finally, we will store or key on our computer's .ssh/config:
+``` IdentityFile ~/.ssh/pi_rsa```
+
+ Here you go! Now all you need to do to access your Raspberry Pi is to type “ssh pi” in your terminal!
+
 
 ### Last Steps!
 
@@ -207,3 +215,4 @@ Ubigate is a Python library which purpose is mostly to exchange MQTT messages wi
 * Describe the config
 * Mention the log/cache files
 * Mention the listening part (even though it is not active yet)
+
