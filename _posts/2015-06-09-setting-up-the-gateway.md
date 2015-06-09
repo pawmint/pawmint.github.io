@@ -19,18 +19,10 @@ date: 2015-06-09 12:35:57
 
 In order to make this work, you will need:
 
-* sensors: make sure they have battery and they are on, read their notice before
+* Motion sensors MS13E and door sensors DS90: make sure they have battery and they are on, read their notice before
 * a transciever
 * a set up Raspberry Pi: to set it up, refer to the section [Setting up a raspberry pi] (http://pawmint.github.io/techntuts/getting-started-with-the-gateway/)
 * your computer, used as an interface to the Raspberry Pi 
-
-Motion sensor MS13E and door sensor DS90:
-
-![Motionsensor](https://github.com/pawmint/techntuts/blob/gh-pages/images/IMG_7962.JPG?raw=true)
-
-Transciever:
-
-![Transciever](https://github.com/pawmint/techntuts/blob/gh-pages/images/IMG_7963.JPG?raw=true)
 
 
 ### Plug everything together
