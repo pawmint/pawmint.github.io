@@ -66,7 +66,7 @@ TODO
 Our team bought virtual machines on Amazon, those are located in Amsterdam and Singapore. This allows us to connect and work from our local machines (used as a simple interface) on our virtual machines (which processes the programs).
 Note : There are few disadvantages to this. An internet connection is needed permanently because the virtual machine is on the cloud.
 
-First read the first 2 sections of http://simononsoftware.com/virtualenv-tutorial/, but stop before the INSTALLATION section, it's outdated. Then, follow http://www.silverwareconsulting.com/index.cfm/2012/7/24/Getting-Started-wit….
+First read the first 2 sections of http://simononsoftware.com/virtualenv-tutorial/, but stop before the INSTALLATION section, it's outdated. Then, follow http://www.silverwareconsulting.com/index.cfm/2012/7/24/Getting-Started-with-virtualenv-and-virtualenvwrapper-in-Python.
 
 ## GitHub
 
