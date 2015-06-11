@@ -87,9 +87,9 @@ You should see the ```X10 Wireless Technology, Inc. Firecracker Interface (ACPI-
   
   Install them:
 
-  in folder UbiGATE: ```sudo python setup.py install```
+  in folder UbiGATE: ```sudo python setup.py develop``` 
   
-  in folder marmitek-gw: ```sudo python setup.py install```
+  in folder marmitek-gw: ```sudo python setup.py develop```
   
 
 ### Install Mosquitto
