@@ -91,6 +91,10 @@ Beware: make sure that the device proposed to burn is the SD card, otherwise all
 Now just do what you are asked for!
 
 
+
+The two following sections aim to control our Raspberry Pi from our computer through the SSH protocol. To understand the concept, you may read this: (http://openclassrooms.com/courses/reprenez-le-controle-a-l-aide-de-linux/la-connexion-securisee-a-distance-avec-ssh)
+
+
 ### Identifying our Raspberry s IP
 
 Once the system is installed on the card, insert it into the SD card slot on the Raspberry, connected to Ethernet network.          
@@ -156,7 +160,7 @@ ssh-keygen -t rsa -C "RaspberryIPAL"
  db:86:3c:fd:35:b0:5d:15:82:5d:0f:62:8f:7f:9b:d5 RaspberryIPAL
 ```
 
-We can see that a keyhole (```Your public key has been saved in /home/laure/.ssh/pi_rsa.pub.```) and a key (```db:86:3c:fd:35:b0:5d:15:82:5d:0f:62:8f:7f:9b:d5 RaspberryIPAL```) have been generated. 
+We can see that a keyhole (```Your public key has been saved in /home/laure/.ssh/pi_rsa.pub.```) and a key have been generated. 
  Now we need to set our keyhole on our Raspberry. We will save it in the pre configured “allowed keys” folder. Finally, we will store or key on our computer's .ssh/config:
 ``` IdentityFile ~/.ssh/pi_rsa```
 
