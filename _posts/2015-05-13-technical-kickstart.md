@@ -7,7 +7,7 @@ date: 2015-05-13 15:31:27
 
 # Setup the project management tools:
 
-The PAWMint team uses agile methods to develop the projects and smart tools to communicate. Before getting started with the technical job, install all communication apps :
+Our PAWMint team uses agile methods to develop the projects and smart tools to communicate. Before getting started with the technical job, install all communication apps :
 
 * Box is used to save docs
 * Slack is used for chatting
