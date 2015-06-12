@@ -120,8 +120,18 @@ Feel free to test it, publish messages on several ports, receiving them in an ot
 ### Test it!
 
   In your shell terminal, run 
-  ``` python gateway.py```
+  ```marmitek-gw```
 
+You should see logs such as INFO, DEBUG and WARNING events show up.
+INFO: signals detected
+DEBUG: state of the mochad connection etc
+WARNING: for example, unknown sensor
+
+Indeed, you should register your sensors and houses etc if you want marmitek to recognize them:
+Please configure ~/.config/marmitek-gw/conf.json with the configuration adapted to your project.
+Once this is done, launch ```marmitek-gw``` again and the WARNING signs should be gone.
+
+(It can be necessary to enter your configuration in /usr/share/upstart/xdg/marmitek-gw/conf.json as well)
 
 ### Useful links:
 
