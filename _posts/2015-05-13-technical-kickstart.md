@@ -29,6 +29,7 @@ You need to install an appropriate OS for development on your computer:
 * If you have a Mac, you are all set
 * If you have Windows, you might want to install Linux in double boot. Therefore, follow carefully [this tutorial] (http://doc.ubuntu-fr.org/cohabitation_ubuntu_windows)
 
+
 Once you have the right OS on your computer, it will be time for you to learn how to use the Terminal: basically, instead of using a mouse and the interface you are used to, you will communicate with your computer through command lines, in shell language. You can learn how to do this by following  [this tutorial] (http://cli.learncodethehardway.org/book/) !
 
 
