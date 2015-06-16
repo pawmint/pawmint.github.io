@@ -47,7 +47,7 @@ You should see the ```X10 Wireless Technology, Inc. Firecracker Interface (ACPI-
 
 
 
-* Make the transciever communicate with the computer by installing the Mochad module on your RP: follow [this tutorial] (http://x10linux.blogspot.sg/2012/08/installing-mochad-on-raspberry-pi.html). Mochad is a Linux TCP gateway daemon for the X10 RF protocol (radio signals): it allows your Raspberry to receive and understand X10 RF (radio) signals.
+* When you installed the raspberry_setup package on our Raspberry, it loaded a module called Mochad, which allows the transciever to communicate with the computer. Mochad is a Linux TCP gateway daemon for the X10 RF protocol (radio signals): it allows your Raspberry to receive and understand X10 RF (radio) signals. If you want details about it, [here you go!] (http://x10linux.blogspot.sg/2012/08/installing-mochad-on-raspberry-pi.html.
 
  You can now test Mochad with the ``` ps aux | grep mochad command ```:
 
@@ -62,7 +62,7 @@ You should see the ```X10 Wireless Technology, Inc. Firecracker Interface (ACPI-
   If not, you may want to start it yourself by typing ```sudo mochad```
 
 
-* Visualize signals from the sensors on ```localhost 1099```. Everytime your activate a sensor, a new line corresponding to the event is added! :
+* Your signal arrives on the 1099 port of localhost, so you can visualize signals from the sensors on ```localhost 1099```. Everytime your activate a sensor, a new line corresponding to the event is added! :
 
   ```
   ❯ nc localhost 1099                                                                                                              [12:19:27 PM] 
@@ -77,8 +77,9 @@ You should see the ```X10 Wireless Technology, Inc. Firecracker Interface (ACPI-
 
 ### Install the gateway on your RP
 
+Actually this has already been done by the raspberry_setup. So try to go to the following paragraph and if it doesn't work, install it again:
 
-  Clone UbiGATE and marmitek-gw on your RP
+Clone UbiGATE and marmitek-gw on your RP
 
   ```git clone https://github.com/pawmint/marmitek-gw.git``` 
   
@@ -95,7 +96,7 @@ You should see the ```X10 Wireless Technology, Inc. Firecracker Interface (ACPI-
 ### Install Mosquitto
   
 
-You will need to build the broker and allow it to communicate with the cloud through MQTT protocol, by following [this tutorial] (http://blogs.media-tips.com/bernard.opic/2015/01/16/vos-premiers-messages-mqtt-avec-mosquitto-sous-ubuntu/).
+The broker is not part of the UbiGATE block, it is part of the UbiSMART. Therefore you don't need a broker to make your system work. Nevertheless in order to test your system, you will need to build the broker inhouse and allow it to communicate with the cloud through MQTT protocol. Please install it by following [this tutorial] (http://blogs.media-tips.com/bernard.opic/2015/01/16/vos-premiers-messages-mqtt-avec-mosquitto-sous-ubuntu/).
 
 
   As you can see in this tutorial, you will use:
@@ -108,18 +109,19 @@ Feel free to test it, publish messages on several ports, receiving them in an ot
 
   Ex: in three different terminals, write:
 
-```mosquitto -p 8000``` → open port 8000
+* ```mosquitto -p 8000``` → open port 8000
 
-```mosquitto_sub -t sensors/mvt -p 8000 ```→ subscribe to port 8000, topic s/m
+* ```mosquitto_sub -t sensors/mvt -p 8000 ```→ subscribe to port 8000, topic s/m
 
-```mosquitto_pub -t sensors/mvt -p 8000 -m “hello” ```→ publish “hello” on port 8000, topic s/m
+* ```mosquitto_pub -t sensors/mvt -p 8000 -m “hello” ```→ publish “hello” on port 8000, topic s/m
  
  on the second terminal, you should see the “hello” message appear
 
+The broker port you will send your signals to is the one specified in the "gateway" section of the configuration file. Adapt it depending on where you want to send your events to. (Once you're ready and confident, replace your own inhouse broker by the UbiSMART broker).
 
 ### Test it!
 
-  In your shell terminal, run 
+In your shell terminal, run 
   ```marmitek-gw```
 
 You should see logs such as INFO, DEBUG and WARNING events show up.
@@ -132,6 +134,7 @@ Please configure ~/.config/marmitek-gw/conf.json with the configuration adapted 
 Once this is done, launch ```marmitek-gw``` again and the WARNING signs should be gone.
 
 (It can be necessary to enter your configuration in /usr/share/upstart/xdg/marmitek-gw/conf.json as well)
+
 
 ### Useful links:
 
