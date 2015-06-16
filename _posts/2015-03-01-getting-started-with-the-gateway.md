@@ -75,27 +75,17 @@ Insert the card into the PC, and verify the name of its partition by typing df -
 
 ```
 
-### Run the firmwareUpdate
-Download the latest raspbian version from the internet:
-wget http://downloads.raspberrypi.org/raspbian_latest 
+### Install the Raspbian OS by running firmwareUpdate.sh
 
-Wait for it to download and extract it in your raspberryPi_setup-master folder next to ./firmwareUpdate. Then open the ./firmwareUpdate:
-vim ./firmwareUpdate.sh
-
-Change the IMG_VERSION and write the name of the extracted .img file from raspbian latest (without the .img).
-
-Run the firmwareUpdate.sh as root and follow the execution:
-sudo firmwareUpdate.sh
+Find the firmwareUpdate.sh script located in raspberry_setup. Run it as root (sudo firmwareUpdate.sh) and follow the execution.
 Beware: make sure that the device proposed to burn is the SD card, otherwise all data on other partition will be lost. 
-
 Now just do what you are asked for!
-
 
 
 The two following sections aim to control our Raspberry Pi from our computer through the SSH protocol. To understand the concept, you may read this: (http://openclassrooms.com/courses/reprenez-le-controle-a-l-aide-de-linux/la-connexion-securisee-a-distance-avec-ssh)
 
 
-### Identifying our Raspberry s IP
+### Identifying our Raspberrys IP
 
 Once the system is installed on the card, insert it into the SD card slot on the Raspberry, connected to Ethernet network.          
 Then we identify Raspberry IP (I used nmap command to scan network [How to use nmap command] (https://www.raspberrypi.org/documentation/troubleshooting/hardware/networking/ip-address.md)). 
@@ -167,13 +157,15 @@ We can see that a keyhole (```Your public key has been saved in /home/laure/.ssh
  Here you go! Now all you need to do to access your Raspberry Pi is to type “ssh pi” in your terminal!
 
 
-### Last Steps!
+### Install the Raspberry Setup!
 
-In order to install some other packages, change script remoteSetup.sh by setting Raspberry IP  and run remoteSetup.sh as root 
-It is a last step, but in order to improve and facilitate installation process we should burn the image of complete system with all packages 
+The raspberry_setup includes several packages that are required to make marmitek-gw work.
+In order to install them, open the remoteSetup.sh script located in raspberry_setup, and set the right Raspberry IP. Then run remoteSetup.sh as root (sudo remoteSetup.sh). 
 
+### Save an image of the setup
 
- Remove the SD card and reinsert in PC. Then verify the size of its partition with df -h, as you did earlier. dd command duplicates partition into bootable image, 
+It is a last step, but in order to improve and facilitate installation process we should burn the image of complete system with all packages.
+Remove the SD card and reinsert in PC. Then verify the size of its partition with df -h, as you did earlier. dd command duplicates partition into bootable image, 
 
 
 ```        
@@ -195,28 +187,3 @@ sudo dd bs=1M if=/dev/mmcblk0 of=/home/newraspberry/raspberry.img count=3000
 ```
 
 DONE!!!
-
-
-
-
-## What is in the Raspberry Pi
-
-* An internet connection, either through 3G, Wifi or ethernet
-* Marmitek-gw
-* Zigbee-gw
-* SSH Reverse-proxy
-* Weaved reverse-proxy
-
-# Ubigate
-
-Ubigate is a Python library which purpose is mostly to exchange MQTT messages with the server. It isn't meant to be started directly, but rather used by `marmitek-gw`, `zigbee-gw` and possibly others.
-
-## TODO
-
-* List the useful methods of Ubigate
-* Give the format of input messages (mochad, zigbee...)
-* Give the format of output MQTT messages (events...)
-* Describe the config
-* Mention the log/cache files
-* Mention the listening part (even though it is not active yet)
-
