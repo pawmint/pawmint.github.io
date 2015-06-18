@@ -159,8 +159,10 @@ We can see that a keyhole (```Your public key has been saved in /home/laure/.ssh
 
 ### Install the Raspberry Setup!
 
-The raspberry_setup includes several packages that are required to make marmitek-gw work.
+Finally you can install the marmitek-gw and the UbiGATE library on your Raspberry Pi! The raspberry_setup also includes several packages that are required to make marmitek-gw work.
 In order to install them, open the remoteSetup.sh script located in raspberry_setup, and set the right Raspberry IP. Then run remoteSetup.sh as root (sudo remoteSetup.sh). 
+
+You now have everything you need to make the marmitek-gw work, and can go on to the next part: [Setting up the Gateway] (http://pawmint.github.io/techntuts/setting-up-the-gateway/). But before you do...
 
 ### Save an image of the setup
 
