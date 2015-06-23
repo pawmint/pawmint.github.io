@@ -2,7 +2,6 @@
 layout: page
 title: "Team documentation: Tech'N'Tuts"
 category: workflow
-order: 6
 date: 2015-06-23 07:00:00
 tags: jekyll thibaut romain
 ---
@@ -66,7 +65,6 @@ layout: page
 title: "My New Page"
 category: tools
 date: 2015-03-01 12:00:00
-order: 1
 ---
 ```
 

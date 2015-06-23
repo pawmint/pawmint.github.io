@@ -3,7 +3,6 @@ layout: page
 title: "History of the project"
 category: administrative
 date: 2015-06-23 08:00:00
-order: 5
 ---
 
 

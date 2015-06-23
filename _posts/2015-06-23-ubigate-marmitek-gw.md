@@ -3,7 +3,6 @@ layout: page
 title: "Ubigate / Marmitek-gw"
 category: hands_on_our_codes
 date: 2015-06-23 10:00:00
-order: 3
 ---
 
 # Set up the Marmitek Gateway

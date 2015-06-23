@@ -3,7 +3,6 @@ layout: page
 title: "Hardware we are using"
 category: technologies
 date: 2015-06-23 06:00:00
-order: 7
 ---
 
 Sensors, Raspberry, etc.
