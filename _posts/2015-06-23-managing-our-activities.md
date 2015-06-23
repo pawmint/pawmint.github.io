@@ -3,7 +3,7 @@ layout: page
 title: "Managing our activities: Trello"
 category: workflow
 order: 2
-date: 2015-06-23 12:45:01
+date: 2015-06-23 11:00:00
 ---
 
 **GETTING STARTED**

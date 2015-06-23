@@ -2,7 +2,7 @@
 layout: page
 title: "LIRMM procedures"
 category: administrative
-date: 2015-06-23 11:22:54
+date: 2015-06-23 10:00:00
 order: 3
 ---
 

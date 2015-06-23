@@ -3,7 +3,7 @@ layout: page
 title: "Team documentation: Tech'N'Tuts"
 category: workflow
 order: 6
-date: 2015-06-23 10:24:23
+date: 2015-06-23 07:00:00
 tags: jekyll thibaut romain
 ---
 
@@ -56,7 +56,9 @@ Categories are listed in `_config.yml` in the `sections` object. Each line defin
 
 
 ## Navigation order
-To reorder elements in the navigation menu, simply add an order attribute to the [front matter](http://jekyllrb.com/docs/frontmatter/) of the page and the navigation links will be sorted accordingly (within it's section).
+To reorder elements in the navigation menu, we have to hack on the date of the pages: the earlier the date, the lower the page will be in its category. In practice, each category's pages'  dates work as a countdown: the first pages starts on 2015-06-23 12:00:00 (or any other datetime), and the following pages will go decreasing : 11am, 10am, 9:30am, etc. It doesn't matter whether you put a step of 1 hour or 1 min between two pages.
+
+It should be possible simply add an order attribute to the [front matter](http://jekyllrb.com/docs/frontmatter/) of the page, and the navigation links would be sorted accordingly (within it's section). However... In practice it doesn't seem to work!
 
 ```
 ---
@@ -67,6 +69,8 @@ date: 2015-03-01 12:00:00
 order: 1
 ---
 ```
+
+
 
 ## Some handy symlinks
 For convenience, a new directory will be created called `_pages` which contains symlinks to the posts without the data prefix, e.g. `2015-03-01-foo.md → foo.md`. This makes it a easier when opening files to edit.

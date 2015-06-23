@@ -2,7 +2,7 @@
 layout: page
 title: "Setting up a Raspberry Pi"
 category: setting_up_our_platform
-date: 2015-06-23 20:08:03
+date: 2015-06-23 12:00:00
 order: 1
 ---
 
