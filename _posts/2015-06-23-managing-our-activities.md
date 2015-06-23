@@ -1,8 +1,9 @@
 ---
 layout: page
-title: "Our Trello Workflow"
-category: tools
-date: 2015-06-22 12:45:01
+title: "Managing our activities: Trello"
+category: workflow
+order: 2
+date: 2015-06-23 12:45:01
 ---
 
 **GETTING STARTED**

@@ -1,6 +1,8 @@
 ---
 layout: page
 title: "Tech'n'Tuts Index"
+category: main
+order: 1
 ---
 
 This is the perfect place for some greetings and introduction to Tech'n'Tuts!

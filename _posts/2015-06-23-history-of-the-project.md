@@ -1,8 +1,8 @@
 ---
 layout: page
 title: "History of the project"
-category: misc
-date: 2015-05-20 14:35:04
+category: administrative
+date: 2015-06-23 14:35:04
 ---
 
 

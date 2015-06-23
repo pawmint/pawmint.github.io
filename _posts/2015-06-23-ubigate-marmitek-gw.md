@@ -1,8 +1,8 @@
 ---
 layout: page
-title: "Setting up the gateway"
-category: home
-date: 2015-06-09 12:35:57
+title: "Ubigate / Marmitek-gw"
+category: hands_on_our_codes
+date: 2015-06-23 12:35:57
 ---
 
 # Set up the Marmitek Gateway

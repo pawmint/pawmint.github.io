@@ -7,12 +7,14 @@ codeurl: 'https://github.com/pawmint/techntuts'
 
 # Default categories (in order) to appear in the navigation
 sections: [
-    ['web', 'WebApp Side'],
-    ['home', 'Home Side'],
-    ['tools', 'Tools & Methods'],
-    ['deploy', 'Deployment'],
-    ['admin', 'Admin'],
-    ['misc', 'Miscellaneous']
+    ['main', 'Main'],
+    ['workflow', 'Team Workflow'],
+    ['technologies', 'Technologies'],
+    ['setting_up_our_platform', 'Setting up our platform'],
+    ['hands_on_our_codes', 'Hands on our codes'],
+    ['deployments', 'Our current deployments'],
+    ['administrative', 'Administrative'],
+    ['deprecated', 'Deprecated']
 ]
 
 # Keep as an empty string if served up at the root. If served up at a specific

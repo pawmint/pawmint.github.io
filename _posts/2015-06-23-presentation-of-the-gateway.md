@@ -1,8 +1,8 @@
 ---
 layout: page
 title: "Presentation of the Gateway"
-category: home
-date: 2015-06-09 12:56:57
+category: deprecated
+date: 2015-06-23 12:56:57
 ---
 
 # Presentation of the Gateway

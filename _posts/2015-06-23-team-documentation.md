@@ -1,9 +1,9 @@
 ---
 layout: page
-title: "Tech'n'Tuts Technical Help"
-category: tools
-order: 3
-date: 2015-03-01 20:41:44
+title: "Team documentation: Tech'N'Tuts"
+category: workflow
+order: 6
+date: 2015-06-23 10:24:23
 tags: jekyll thibaut romain
 ---
 

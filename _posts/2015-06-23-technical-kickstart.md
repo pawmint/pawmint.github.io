@@ -1,8 +1,8 @@
 ---
 layout: page
 title: "Technical Kickstart"
-category: tools
-date: 2015-05-13 15:31:27
+category: deprecated
+date: 2015-06-23 15:31:27
 ---
 
 # Setup the project management tools:
