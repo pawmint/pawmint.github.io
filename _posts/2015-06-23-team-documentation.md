@@ -64,6 +64,7 @@ It should be possible simply add an order attribute to the [front matter](http:/
 layout: page
 title: "My New Page"
 category: tools
+order: 1
 date: 2015-03-01 12:00:00
 ---
 ```
