@@ -110,7 +110,7 @@ archive: true
 
 ### Link to another post
 
-To make a link towards another Tech'N'Tuts post, you can use a [Jekyll template](http://jekyllrb.com/docs/templates/#post-url) : `[Another post]({{ "{% post_url another-post " }}%})`
+To make a link towards another Tech'N'Tuts post, you can use a [Jekyll template](http://jekyllrb.com/docs/templates/#post-url) : `[Another post]({{ "{% post_url 2015-06-23-another-post " }}%})`
 
 ### Link to anchor inside a post
 
