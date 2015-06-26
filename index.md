@@ -29,6 +29,10 @@ These pages will give a large view of what we do.
 
 That section describes every tool we are using. Newcomers are encouraged to read all of these pages, to facilitate their integration into the team. And even for veterans it may contain useful reminders ;).
 
+## Academic research
+
+Consider it as a sub-section of the `team workflow` section. These pages are specific advice for PhD students and postdoc to have good basis in dealing with academic research.
+
 ## Technologies
 
 Tutorials for learning the languages and tool we are using. These are general purpose, but will usually focus a bit more on our use cases.
