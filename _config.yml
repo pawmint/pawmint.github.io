@@ -9,6 +9,7 @@ codeurl: 'https://github.com/pawmint/techntuts'
 sections: [
     ['main', 'Main'],
     ['workflow', 'Team Workflow'],
+    ['academic', 'Academic Research'],
     ['technologies', 'Technologies'],
     ['setting_up_our_platform', 'Setting up our platform'],
     ['hands_on_our_codes', 'Hands on our codes'],
