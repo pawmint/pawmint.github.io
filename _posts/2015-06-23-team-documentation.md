@@ -115,3 +115,9 @@ To make a link towards another Tech'N'Tuts post, you can use a [Jekyll template]
 ### Link to anchor inside a post
 
 Simply make a link to your a dasherized-version of your section: `[My link](#my-section)`.
+
+# Learning Markdown
+
+The Tech'N'Tuts are written in Markdown format. This format is also used by Github, Slack, Trello and plenty of other tools. Its syntax is much more intuitive than Latex or HTML. You can quickly learn markdown [here](http://www.markdown-tutorial.com).
+
+Also, if you ever want to compile Markdown files into Latex,HTML,PDF,DOC,etc. have a look at [Pandoc](http://pandoc.org/).
