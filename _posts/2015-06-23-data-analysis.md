@@ -44,7 +44,8 @@ Data-analysis belongs to the second step and uses combination of machine learnin
 	* [D3.js](http://d3js.org/): JavaScript library for manipulating documents based on data;
 	* [gnuplot](http://www.gnuplot.info/): portable multi-platform command-line driven graphing utility.
 * [Open mHealth](http://www.openmhealth.org/): open-source code for dealing with digital health data;
-* [bigMl](https://bigml.com): open-source machine learning tools for data-minig.
+* [bigMl](https://bigml.com): open-source machine learning tools for data-minig;
+* [CLUTO](http://glaros.dtc.umn.edu/gkhome/cluto/cluto/overview): software for clustering low- and high-dimensional datasets and for analyzing the characteristics of the various clusters.
 	
 ## Web resources 
 * [Kaggle](https://www.kaggle.com/): The Home of Data Science. Competitions in data-mining with open-source code, tutorials and case-studies;
@@ -52,7 +53,7 @@ Data-analysis belongs to the second step and uses combination of machine learnin
 * [KDnugetts](http://www.kdnuggets.com): Data Mining, Analytics, Big Data, and Data Science ressource with different services: courses, meetings, blogs, sofware etc;
 * Topological data analysis: [blog](https://shapeofdata.wordpress.com/) and [whitepaper](http://www.ayasdi.com/resources/whitepaper/tda-and-machine-learning/);
 * Short but intensive [introduction](https://www.mysliderule.com/learning-paths/data-analysis) to the field of data-analysis;
-* [Data Science Masters](http://datasciencemasters.org/) open-source curriculum for learning most common methods od data-analysis;
+* [Data Science Masters](http://datasciencemasters.org/): open-source curriculum for learning most common methods of data-analysis;
 * [Simply Statistics](http://simplystatistics.org/): blog with ideas of using statistics for solving different data-mining problems;
 * [Mathematics pop-up](http://radar.oreilly.com/2013/05/signals-geometry-topology-and-data-science.html#.Ub_wVRRGuhI.twitter) in data-analysis;
 * [Revolutions](http://blog.revolutionanalytics.com/statistics/): blogs about using R for big data analysis, predictive modeling and data science.
