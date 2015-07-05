@@ -8,10 +8,12 @@ date: 2015-06-23 07:00:00
 # Mast-have for data-analysis.
 
 Typical data-mining process consists of two main steps :
-	* **Information Retrieval** – process of retrieving data out of data storage;
-	* **Knowledge Data Discovery** – processing retrieving data for discovering useful knowledge.
+
+* **Information Retrieval** – process of retrieving data out of data storage;
+* **Knowledge Data Discovery** – processing retrieving data for discovering useful knowledge.
 
 Data-analysis belongs to the second step and uses combination of machine learning and statistics. Some common tasks of data-analysis are following:
+
 	* Clustering
 	* Classification
 	* Association rules
