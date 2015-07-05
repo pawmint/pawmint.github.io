@@ -8,16 +8,16 @@ date: 2015-06-23 07:00:00
 # Mast-have for data-analysis.
 
 Typical data-mining process consists of two main steps :
-* **Information Retrieval** – process of retrieving data out of data storage;
-* **Knowledge Data Discovery** – processing retrieving data for discovering useful knowledge.
+	* **Information Retrieval** – process of retrieving data out of data storage;
+	* **Knowledge Data Discovery** – processing retrieving data for discovering useful knowledge.
 
 Data-analysis belongs to the second step and uses combination of machine learning and statistics. Some common tasks of data-analysis are following:
-* Clustering
-* Classification
-* Association rules
-* Predictive analytics
-* Analysis of deviance
-* Visualisation
+	* Clustering
+	* Classification
+	* Association rules
+	* Predictive analytics
+	* Analysis of deviance
+	* Visualisation
 
  This section covers useful open-source tools and resources for the most complete data-analysis.
 
@@ -37,7 +37,7 @@ Data-analysis belongs to the second step and uses combination of machine learnin
 	* Excellent [blog](http://jmgomezhidalgo.blogspot.com.es/search/label/Data%20Mining) on some weka and data-mining (especially text-mining) tricks;
 	* [Brief tutorial](http://facweb.cs.depaul.edu/mobasher/classes/ect584/weka/associate.html) on association rule mining with Weka.
 * [R](http://www.r-project.org/): language and environment for statistical computing and graphics;
-	*[RStudio](http://www.rstudio.com/): multi-platform user interface for R.
+	* [RStudio](http://www.rstudio.com/): multi-platform user interface for R.
 * Visualisation tools:
 	* [D3.js](http://d3js.org/): JavaScript library for manipulating documents based on data;
 	* [gnuplot](http://www.gnuplot.info/): portable multi-platform command-line driven graphing utility.
