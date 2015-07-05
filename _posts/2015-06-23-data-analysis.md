@@ -49,10 +49,10 @@ Data-analysis belongs to the second step and uses combination of machine learnin
 ## Web resources 
 * [Kaggle](https://www.kaggle.com/): The Home of Data Science. Competitions in data-mining with open-source code, tutorials and case-studies;
 * [DataTau](http://www.datatau.com/): best data-mining blog;
-* [KDnugetts](http://www.kdnuggets.com): Data Mining, Analytics, Big Data, and Data Science ressource with different services: courses, meetigs, blogs, sofware etc;
+* [KDnugetts](http://www.kdnuggets.com): Data Mining, Analytics, Big Data, and Data Science ressource with different services: courses, meetings, blogs, sofware etc;
 * Topological data analysis: [blog](https://shapeofdata.wordpress.com/) and [whitepaper](http://www.ayasdi.com/resources/whitepaper/tda-and-machine-learning/);
 * Short but intensive [introduction](https://www.mysliderule.com/learning-paths/data-analysis) to the field of data-analysis;
 * [Data Science Masters](http://datasciencemasters.org/) open-source curriculum for learning most common methods od data-analysis;
 * [Simply Statistics](http://simplystatistics.org/): blog with ideas of using statistics for solving different data-mining problems;
 * [Mathematics pop-up](http://radar.oreilly.com/2013/05/signals-geometry-topology-and-data-science.html#.Ub_wVRRGuhI.twitter) in data-analysis;
-* [Revolutions](http://blog.revolutionanalytics.com/statistics/): blos about using R for big data analysis, predictive modeling and data science.
+* [Revolutions](http://blog.revolutionanalytics.com/statistics/): blogs about using R for big data analysis, predictive modeling and data science.
