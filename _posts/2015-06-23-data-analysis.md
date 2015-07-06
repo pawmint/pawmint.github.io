@@ -5,7 +5,7 @@ category: hands_on_our_codes
 date: 2015-06-23 07:00:00
 ---
 
-# Mast-have for data-analysis.
+# Getting started with data-analysis.
 
 Typical data-mining process consists of two main steps :
 
