@@ -20,9 +20,10 @@ Install your Tech'N'Tuts locally with:
 
 ```bash
 git clone git@github.com:pawmint/techntuts.git
-git checkout gh-pages
-gem install jekyll
 cd techntuts
+git checkout gh-pages
+sudo apt-get install ruby1.9.1-dev
+sudo gem install jekyll
 bin/jekyll-page -l
 ```
 
