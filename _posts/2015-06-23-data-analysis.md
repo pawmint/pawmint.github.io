@@ -16,13 +16,13 @@ From the ubismart server:
 ```
 $ mkdir ~/tmp
 $ sudo psql -d ubidb -U sails
-> COPY event TO '/home/pawm/tmp/backup_event_<yyyy_mm_dd>.csv' DELIMITER ",";
-> COPY activity TO '/home/pawm/tmp/backup_activity_<yyyy_mm_dd>.csv' DELIMITER ",";
-> COPY groundtruth TO '/home/pawm/tmp/backup_groundtruth_<yyyy_mm_dd>.csv' DELIMITER ",";
+> COPY event TO '/home/pawm/tmp/backup_event_<yyyy_mm_dd>.csv' DELIMITER ',';
+> COPY activity TO '/home/pawm/tmp/backup_activity_<yyyy_mm_dd>.csv' DELIMITER ',';
+> COPY groundtruth TO '/home/pawm/tmp/backup_groundtruth_<yyyy_mm_dd>.csv' DELIMITER ',';
 # Delete old rows from the database (if the platform gets slow). You should keep 8 days of data for the viz.
-> DELETE FROM event WHERE data <= '<yyyy-mm-dd>';
-> DELETE FROM grountruth WHERE data <= '<yyyy-mm-dd>';
-> DELETE FROM activity WHERE data <= '<yyyy-mm-dd>';
+> DELETE FROM event WHERE date <= '<yyyy-mm-dd>';
+> DELETE FROM grountruth WHERE date <= '<yyyy-mm-dd>';
+> DELETE FROM activity WHERE date <= '<yyyy-mm-dd>';
 ```
 
 From your computer:
