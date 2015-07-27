@@ -34,15 +34,7 @@ The columns `Projects & Partnership`, `Long-term` and `Retrospective` are a bit 
 
 ## Labels
 
-1. Deployments
-2. Demos
-3. Reasoning
-4. Gateway / Home
-5. Webapp
-6. Admin
-7. Team Life
-8. Academic / Publishing
-9. Project Leads
+Add labels, thanks. :P
 
 ## Tip & Tricks
 
