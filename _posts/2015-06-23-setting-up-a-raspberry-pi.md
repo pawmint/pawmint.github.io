@@ -82,7 +82,7 @@ Beware: make sure that the device proposed to burn is the SD card, otherwise all
 Now just do what you are asked for!
 
 
-The two following sections aim to control our Raspberry Pi from our computer through the SSH protocol. To understand the concept, you may read this: (http://openclassrooms.com/courses/reprenez-le-controle-a-l-aide-de-linux/la-connexion-securisee-a-distance-avec-ssh)
+The two following sections aim to control our Raspberry Pi from our computer through the SSH protocol. To understand the concept, you may read this: (https://www.digitalocean.com/community/tutorials/how-to-use-ssh-to-connect-to-a-remote-server-in-ubuntu)
 
 
 ### Identifying our Raspberrys IP
