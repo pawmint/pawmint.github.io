@@ -27,7 +27,7 @@ Therefore, clone the following raspberrysetup git repository in your local direc
 mkdir IPALdepo
 git init
 git clone https://github.com/pawmint/raspberry_setup.git
-Open it and make sure it contains the file ./firmwareUpdate.
+Open it and make sure that the  file ./firmwareUpdate contains the right and up-to-date file name of the firmware version to be burned
 
 
 ### Insert and explore your SD card
