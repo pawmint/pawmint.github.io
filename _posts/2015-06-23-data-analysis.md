@@ -5,7 +5,43 @@ category: hands_on_our_codes
 date: 2015-06-23 07:00:00
 ---
 
-# Getting started with data-analysis.
+# Analyzing our ubismart data
+
+## Importing data from SQL
+
+Careful, this should be scripted!
+
+From the ubismart server:
+
+```
+$ mkdir ~/tmp
+$ sudo psql -d ubidb -U sails
+> COPY event TO '/home/pawm/tmp/backup_event_<yyyy_mm_dd>.csv' DELIMITER ',' CSV HEADER;
+> COPY activity TO '/home/pawm/tmp/backup_activity_<yyyy_mm_dd>.csv' DELIMITER ',' CSV HEADER;
+> COPY groundtruth TO '/home/pawm/tmp/backup_groundtruth_<yyyy_mm_dd>.csv' DELIMITER ',' CSV HEADER;
+# Delete old rows from the database (if the platform gets slow). You should keep 8 days of data for the viz.
+> DELETE FROM event WHERE date <= '<yyyy-mm-dd>';
+> DELETE FROM grountruth WHERE date <= '<yyyy-mm-dd>';
+> DELETE FROM activity WHERE date <= '<yyyy-mm-dd>';
+```
+
+From your computer:
+
+```bash
+$ cd <my_data_analysis_repository>
+$ scp -i ~/.ssh/pawmint_rsa pawm@normandie.ubismart.org:/home/pawm/tmp/<yyyy_mm_dd>_{activities,events,groundtruth}.csv .
+```
+
+## Loading the data into Jupyter
+
+TODO:
+
+* Install Jupyter
+* Clone the dataviz repository
+* Run the basic script
+* visualize data
+
+# Tools and methods
 
 Typical data-mining process consists of two main steps :
 
@@ -30,7 +66,8 @@ Data-analysis belongs to the second step and uses combination of machine learnin
 	* [Scipy](http://www.scipy.org/): Python-based ecosystem of open-source software for mathematics, science, and engineering;
 	* [StatsModels](http://statsmodels.sourceforge.net/): module with extensive list of descriptive statistics, statistical tests, plotting functions, and result statistics; are available for different types of data and each estimato
 	* [scikit-learn](http://scikit-learn.org/stable/): machine learning in Python;
-	* [matplotlib](http://matplotlib.org/): 2D plotting library; 
+	* [bokey](http://matplotlib.org/): Cool 2D plotting library; 
+	* [matplotlib](http://matplotlib.org/): Not-so-cool 2D plotting library; 
 	* [gnuplot](http://gnuplot-py.sourceforge.net/): Python package that interfaces to [gnuplot](http://www.gnuplot.info/), the popular open-source plotting program.
 * [Octave](http://www.gnu.org/software/octave/): high-level interpreted language with extensive graphics capabilities for data visualization and manipulation. Quite similar to Matlab so that most programs are easily portable. 
 * [FreeMat](http://freemat.sourceforge.net/): free environment for rapid engineering and scientific prototyping and data processing. Also similar to commercial systems such as MATLAB from Mathworks, and IDL from Research Systems.
@@ -41,8 +78,8 @@ Data-analysis belongs to the second step and uses combination of machine learnin
 * [R](http://www.r-project.org/): language and environment for statistical computing and graphics;
 	* [RStudio](http://www.rstudio.com/): multi-platform user interface for R.
 * Visualisation tools:
-	* [D3.js](http://d3js.org/): JavaScript library for manipulating documents based on data;
-	* [gnuplot](http://www.gnuplot.info/): portable multi-platform command-line driven graphing utility.
+* [D3.js](http://d3js.org/): JavaScript library for manipulating documents based on data;
+* [gnuplot](http://www.gnuplot.info/): portable multi-platform command-line driven graphing utility.
 * [Open mHealth](http://www.openmhealth.org/): open-source code for dealing with digital health data;
 * [bigMl](https://bigml.com): open-source machine learning tools for data-minig;
 * [CLUTO](http://glaros.dtc.umn.edu/gkhome/cluto/cluto/overview): software for clustering low- and high-dimensional datasets and for analyzing the characteristics of the various clusters.

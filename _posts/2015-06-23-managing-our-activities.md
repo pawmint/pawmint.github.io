@@ -34,19 +34,12 @@ The columns `Projects & Partnership`, `Long-term` and `Retrospective` are a bit 
 
 ## Labels
 
-1. Deployments
-2. Demos
-3. Reasoning
-4. Gateway / Home
-5. Webapp
-6. Admin
-7. Team Life
-8. Academic / Publishing
-9. Project Leads
+Add labels, thanks. :P
 
 ## Tip & Tricks
 
 * Don't hesitate to abuse attachements, checklists, comments, markdown formatting, etc. as long as it is useful
+* If you contribute to a project, please add yourself as a member of the corresponding card (`<space>`). If you just want to receives update from that card (although you don't want to appear as a member), just subscribe to it with `s`.
 
 ### Mentionning members
 
