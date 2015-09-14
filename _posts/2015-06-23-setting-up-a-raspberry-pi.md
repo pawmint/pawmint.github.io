@@ -3,6 +3,7 @@ layout: page
 title: "Setting up a Raspberry Pi"
 category: setting_up_our_platform
 date: 2015-06-23 12:00:00
+archive: true
 ---
 
 # Setting up a Raspberry Pi
