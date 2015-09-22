@@ -44,4 +44,4 @@ If you are using Google Chrome, you can share your screen using Appear.in or Goo
 
 # Good practices of pair programming
 
-TODO
+If you want to pairprog while having some freedom, you can create your own session inside an existing session. This will allow you to move around the windows without affecting other users and two users could then edit content on different tmux windows. To do this execute `tmux new-session -t <name of target session> -s <name of newly created session>`. When you work like this, you may want activate aggressive resize so that each user always gets the biggest screen size possible depending on who is sharing that screen: `tmux setw -g aggressive-resize on`.
