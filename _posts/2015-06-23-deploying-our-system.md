@@ -46,150 +46,86 @@ For this step, you will need the following material:
 
 
 
-### Download raspberry setup repo
+### Download raspberry_setup repo
 
-You will need to install the Operating System and some packages on the SD card (the minimum size and speed of your SD card depend on raspberry pi model). In our case it was Raspberry Pi B with SD carte of 8 Mb 4 class.
-Therefore, clone the following raspberrysetup git repository in your local directory:
+Install the Operating System and required packages on the SD card: <br>
+
+```
 mkdir IPALdepo
 git init
 git clone https://github.com/pawmint/raspberry_setup.git
-Open it and make sure that the  file ./firmwareUpdate contains the right and up-to-date file name of the firmware version to be burned
-
-
-### Insert and explore your SD card
-
-Insert the card into the PC, and verify the name of its partition by typing df -h in the terminal. You will see all the partitions of both your local machine and the SD card. Here is what you get:
-
-*When the SD card is not inserted in the computer*
-
+cd raspberry_setup
 ```
-        laure@laure-HP-Pavilion-TS-14-Notebook-PC:~$ df -h 
-       
-       Sys. de fichiers Taille Utilisé Dispo Uti% Monté sur 
-       /dev/sda7           28G    5.5G   21G  22% / 
-       none               4.0K       0  4.0K   0% /sys/fs/cgroup 
-       udev               3.9G    4.0K  3.9G   1% /dev 
-       tmpfs              792M    1.2M  791M   1% /run 
-       none               5.0M       0  5.0M   0% /run/lock 
-       none               3.9G     15M  3.9G   1% /run/shm 
-       none               100M     60K  100M   1% /run/user 
-       /dev/sda4          649G    285G  364G  44% /media/windows 
-       /dev/sda2          256M    112M  145M  44% /boot/efi 
-       /dev/sda1          400M    287M  114M  72% /media/laure/WINRE 
+Make sure that the firmwareUpdate.sh contains the latest version of the firmware version to be burned
 
-```
 
-*When SD card is inserted in the computer*
+### Install Raspbian OS by running firmwareUpdate.sh
 
-```
-   
-   laure@laure-HP-Pavilion-TS-14-Notebook-PC:~$ df -H 
-   
-   Sys. de fichiers Taille Utilisé Dispo Uti% Monté sur 
-   /dev/sda7           30G    5.9G   22G  22% / 
-   none               4.1k       0  4.1k   0% /sys/fs/cgroup 
-   udev               4.2G    4.1k  4.2G   1% /dev 
-   tmpfs              830M    1.3M  829M   1% /run 
-   none               5.3M       0  5.3M   0% /run/lock 
-   none               4.2G     16M  4.2G   1% /run/shm 
-   none               105M     66k  105M   1% /run/user 
-   /dev/sda4          697G    306G  391G  44% /media/windows 
-   /dev/sda2          269M    118M  152M  44% /boot/efi 
-   /dev/sda1          420M    301M  120M  72% /media/laure/WINRE 
-   /dev/mmcblk0p2     2.8G    2.4G  301M  89% /media/laure/5d18be51-3217-4679-9c72-a54e0fc53d6b 
-   /dev/mmcblk0p1      59M     10M   49M  17% /media/laure/boot 
+Insert the card into the PC. <br>
+Get the name of your SD card's partition to be burned: `df -h` shows you all the partitions of both your local machine and the SD card. <br>
 
+Run firmwareUpdate.sh as root and follow the execution: <br>
+`sudo firmwareUpdate.sh` <br>
+!!! Make sure that the device proposed to burn is the SD card, otherwise all data on other partition will be lost. <br>
+
+### SSH connect the Raspberry to your machine
+
+Explainations about SSH protocol: https://www.digitalocean.com/community/tutorials/how-to-use-ssh-to-connect-to-a-remote-server-in-ubuntu <br>
+
+Connect your Raspberry and your local machine on the same local network. <br>
+Identify Raspberry's IP with the `nmap` command: [How to use nmap command] (https://www.raspberrypi.org/documentation/troubleshooting/hardware/networking/ip-address.md)). <br>
+
+``` 
+apt-get install nmap
+hostname -I
+nmap -sn your.local.ip.0/24
 ```
 
-### Install the Raspbian OS by running firmwareUpdate.sh
+`hostname -I` gives your local machine's IP address. ex: `192.168.1.101` <br>
+`nmap -sn your.local.ip.0/24` scans all IP addresses from `your.local.ip.0` to `your.local.ip.255`. ex: `nmap -sn 192.168.1.0/24` <br>
 
-Find the firmwareUpdate.sh script located in raspberry_setup. Run it as root (sudo firmwareUpdate.sh) and follow the execution.
-Beware: make sure that the device proposed to burn is the SD card, otherwise all data on other partition will be lost. 
-Now just do what you are asked for!
-
-
-The two following sections aim to control our Raspberry Pi from our computer through the SSH protocol. To understand the concept, you may read this: (https://www.digitalocean.com/community/tutorials/how-to-use-ssh-to-connect-to-a-remote-server-in-ubuntu)
-
-
-### Identifying our Raspberrys IP
-
-Once the system is installed on the card, insert it into the SD card slot on the Raspberry, connected to Ethernet network.          
-Then we identify Raspberry IP (I used nmap command to scan network [How to use nmap command] (https://www.raspberrypi.org/documentation/troubleshooting/hardware/networking/ip-address.md)). 
-
-
-* Install nmap
-``` apt-get install nmap```
-* Get your computers IP address
-``` hostname -I```, I get 192.168.1.101
-* Scan the whole subnet surrounding your computer, which means look for internet connected devices (especially your Raspberry Pi!) on IP addresses from #192.168.1.0 to 192.168.1.255
-``` nmap -sn 192.168.1.0/24``` You should get something like this:
+Find your Raspberry and its IP on the list. <br>
+At this step you can remotely connect to your Raspberry from our local machine: <br>
 
 ```
-Nmap scan report for hpprinter (192.168.1.2)
-Host is up (0.00044s latency).
-Nmap scan report for Gordons-MBP (192.168.1.4)
-Host is up (0.0010s latency).
-Nmap scan report for ubuntu (192.168.1.5)
-Host is up (0.0010s latency).
-Nmap scan report for raspberrypi (192.168.1.8)
-Host is up (0.0030s latency).
-Nmap done: 256 IP addresses (4 hosts up) scanned in 2.41 second
-
-```
-
-Here you can see a device with hostname raspberrypi has IP address 192.168.1.8.
-I get the IP 192.168.2.33 so it's the one I will use for this presentation.
-
-### Connect Raspberry to your PC
-
-At this step we can remotely connect to RaspberryPi from our PC by entering:
-ssh pi@<IP>  
+ssh pi@<Raspberry's IP> 
 password: raspberry 
+```
 
+To register the Raspberry in your ssh connected machines: <br>
 
-### Configure to make your life easier
+* Go back to your local machine's terminal and generate a public/private key: <br>
 
-Two things left to go through, in order to make your everyday life easier. Here's what we'll do: 
-- register pi@192.168.2.33 to save us from typing the IP every time we want to ssh connect.
-- create a key and a public key (=keyhole of our RP) to be able to access the RP without entering the password every time.
+`ssh-keygen -t rsa -C "RaspberryIPAL"` <br>
 
-To save the IP and port, create a .ssh/config file and edit it (vim .ssh/config) by writing:
+In `~/.ssh`, you should now be able to see a public (pi_rsa.pub) and a private key (pi_rsa).
+In `~/.ssh/config` add the lines, replacing `<Raspberry's IP>` with your Raspberry's IP:
 
 ```
 Host pi
-Hostname 192.168.2.33
+Hostname <Raspberry's IP> 
 User pi
+IdentityFile ~/.ssh/pi_rsa
 ```
 
-To create the key-keyhole system:
+* Provide your Raspberry with the public key that you just generated:
 
 ```
-ssh-keygen -t rsa -C "RaspberryIPAL" 
-
- Generating public/private rsa key pair. 
- Enter file in which to save the key (/home/laure/.ssh/id_rsa): /home/laure/.ssh/pi_rsa 
- Enter passphrase (empty for no passphrase): 
- Enter same passphrase again: 
- Your identification has been saved in /home/laure/.ssh/pi_rsa. 
- Your public key has been saved in /home/laure/.ssh/pi_rsa.pub. 
- The key fingerprint is: 
- db:86:3c:fd:35:b0:5d:15:82:5d:0f:62:8f:7f:9b:d5 RaspberryIPAL
+sudo mkdir .ssh
+cd .ssh
+sudo touch authorized_keys
 ```
-
-We can see that a keyhole (```Your public key has been saved in /home/laure/.ssh/pi_rsa.pub.```) and a key have been generated. 
- Now we need to set our keyhole on our Raspberry. We will save it in the pre configured “allowed keys” folder. Finally, we will store or key on our computer's .ssh/config:
-``` IdentityFile ~/.ssh/pi_rsa```
-
- Here you go! Now all you need to do to access your Raspberry Pi is to type “ssh pi” in your terminal!
+Open authorized_keys and paste the public key in it.
+Now all you need to do to access your Raspberry Pi is to type `ssh pi` in your terminal!
 
 
 ### Install the Raspberry Setup!
 
-Finally you can install the marmitek-gw and the UbiGATE library on your Raspberry Pi! The raspberry_setup also includes several packages that are required to make marmitek-gw work.
-In order to install them, open the remoteSetup.sh script located in raspberry_setup, and set the right Raspberry IP. Then run remoteSetup.sh as root (sudo remoteSetup.sh). 
+Install the marmitek-gw and the UbiGATE library on your Raspberry: <br>
+Open `remoteSetup.sh` script located in raspberry_setup, and set the right Raspberry's IP. <br>
+Then: `sudo ./remoteSetup.sh` <br>
 
-You now have everything you need to make the marmitek-gw work
-
+You have now everything you need to make the marmitek-gw work.
 
 
 ## Assembly the gateway
@@ -209,40 +145,18 @@ In order to make this work, you will need:
 ### Plug everything together
 
 
-* Plug your transciever to your Raspberry Pi. In order to make sure that your RP detects the transciever, use ```lsusb```:
-
-```
- ❯ lsusb                                                  [12:05:26 PM] 
- Bus 001 Device 002: ID 8087:8000 Intel Corp. 
- Bus 001 Device 001: ID 1d6b:0002 Linux Foundation 2.0 root hub 
- Bus 003 Device 001: ID 1d6b:0003 Linux Foundation 3.0 root hub 
- Bus 002 Device 004: ID 0eef:a107 D-WAV Scientific Co., Ltd 
- Bus 002 Device 003: ID 8087:07dc Intel Corp. 
- Bus 002 Device 006: ID 0bc7:0002 X10 Wireless Technology, Inc. Firecracker Interface (ACPI-compliant) 
- Bus 002 Device 002: ID 04f2:b40d Chicony Electronics Co., Ltd 
- Bus 002 Device 001: ID 1d6b:0002 Linux Foundation 2.0 root hub 
- ```
-
-You should see the ```X10 Wireless Technology, Inc. Firecracker Interface (ACPI-compliant) ```.
+* Plug your transciever to your Raspberry Pi. Make sure that your Raspberry detects it with the command `lsusb`: You should see the ```X10 Wireless Technology, Inc. Firecracker Interface (ACPI-compliant) ```
 
 
-
-* When you installed the raspberry_setup package on our Raspberry, it loaded a module called Mochad, which allows the transciever to communicate with the computer. Mochad is a Linux TCP gateway daemon for the X10 RF protocol (radio signals): it allows your Raspberry to receive and understand X10 RF (radio) signals. If you want details about it, [here you go!] (http://x10linux.blogspot.sg/2012/08/installing-mochad-on-raspberry-pi.html.
-
- You can now test Mochad with the ``` ps aux | grep mochad command ```:
-
- ```
-  ❯ ps aux | grep mochad                                                                                                           [12:15:00 PM] 
-  root      6394  0.0  0.0  29796   900 ?        Ssl  11:51   0:00 /usr/local/bin/mochad 
-  laure     6790  0.0  0.0  15984   960 pts/4    S+   12:15   0:00 grep mo
-  ```
-
-  You should see the line:
-  ``` root      6394  0.0  0.0  29796   900 ?        Ssl  11:51   0:00 /usr/local/bin/mochad ```
-  If not, you may want to start it yourself by typing ```sudo mochad```
+* The Marmitek uses a module called Mochad (Linux TCP gateway daemon for the X10 RF protocol), which allows the transciever to communicate with the computer. 
+ Make sure the Mochad process is running with 
+ ` ps aux | grep mochad`
+ You should see the line:
+  ` root      6394  0.0  0.0  29796   900 ?        Ssl  11:51   0:00 /usr/local/bin/mochad `
+  If not, start it: `sudo mochad`
 
 
-* Your signal arrives on the 1099 port of localhost, so you can visualize signals from the sensors on ```localhost 1099```. Everytime your activate a sensor, a new line corresponding to the event is added! :
+* Your sensor signals arrive on localhost, port 1099. You can visualize them:
 
   ```
   ❯ nc localhost 1099                                                                                                              [12:19:27 PM] 
@@ -254,60 +168,21 @@ You should see the ```X10 Wireless Technology, Inc. Firecracker Interface (ACPI-
   06/08 12:19:39 Rx RF HouseUnit: A1 Func: On 
   ```
   
+### Configure Marmitek
 
-### Test it!
+The conf file is located in `~/.config/marmitek/conf.json`. Please modify the following: <br>
 
-In your shell terminal, run 
-  ```marmitek-gw```
-
-You should see the live visualization of the gate's activity appear: logs such as INFO, DEBUG and WARNING events show up.
-
-* INFO: signals detected
-
-* DEBUG: state of the mochad connection etc
-
-* WARNING: for example, unknown sensor
-
-
-Soon an error appears: "no MQTT connection"! 
-Why?!!!
-
-Because you need an MQTT enabled server to run marmitek-gw:
-
-
-### Create a local MQTT enabled server for test purposes
-  
-The Ubigate Library connects to a server to send its processed information (UbiGATE/ubigate/gate.py, line 68: the method _connect requires a server). This server has to be an MQTT server (or broker), which means it needs to be able to recieve and send MQTT messages. In the case of our platform, the broker is a mosca server located on UbiSMART, port 1883. This is the address that should be specified in the configuration file (~/.config/marmitek-gw/conf.json), section "gateway":
+MQTT: <br>
+The Ubigate Library connects to a server to send its processed information. This server has to be an MQTT server (or broker), which means it needs to be able to recieve and send MQTT messages. In the case of our platform, the broker is a mosca server located on UbiSMART, port 1883. 
 
 ```
-"server": address of UbiSMART
-"port": 1883
+"server": <UBISMART_ADRESS> #(ex:tibo.ubismart.org)
+"port": <PORT>
 ```
 
-Nevertheless, you will need to test your Gateway on your own computer before sending your signals to UbiSMART, and therefore turn your computer into a broker. That's the purpose of Mosquitto: allowing your computer to understand the MQTT protocol. Please install it:
-```sudo apt-get install mosquitto```
-```sudo apt-get install mosquitto-clients```
+If you don't want to test with Ubismart, but rather with your local machine, please read the paragraph "Extra: create a local MQTT enabled server for test purposes"
 
-Here's a good documentation for MQTT, mosquitto, mosquitto-sub and mosquitto-pub: (http://mosquitto.org/man/mqtt-7.html)
-
-Here is the way you'll test your gateway locally:
-
-* In the terminal, run ```mosquitto -p 8000``` →  create an MQTT enabled server on the port 8000 of your Raspberry Pi.
-
-* In the marmitek config file (~/.config/marmitek-gw/conf.json), change the broker destination:
-```
-"server":"localhost" 
-"port": 8000
-```
-From now on, when you launch the marmitek gateway, all the data will be sent on your MQTT server on port 8000 or your Raspberry Pi.
-
-* In the terminal, run ```mosquitto_sub -t house/1/marmitek/sensor/A1 -p 8000 ``` →  subscribe to topic house/1/marmitek/sensor/A1 on your MQTT enabled server (located on port 8000). This will allow you to visualize what the UbiSMART broker recieves.
-(Not to be confused with what you see when you launch "marmitek-gw", which is the live visualization of the gate activity)
-
-
-### Communicate with UbiSMART!
-
-Once it works, go back to your config file, and enter the UbiSMART broker address, for example:
+Your config file should look like this:
 
 ```
   "gateways": 
@@ -339,7 +214,46 @@ You will also need to specify your sensors:
    ]
 ```  
 
-Launch "marmitek-gw": it works!
+### Test it!
+
+In your shell terminal, run `marmitek-gw`
+
+You should see the live visualization of the gate's activity appear: logs such as INFO, DEBUG and WARNING events show up.
+
+* INFO: signals detected
+
+* DEBUG: state of the mochad connection etc
+
+* WARNING: for example, unknown sensor
+
+
+
+### Extra: create a local MQTT enabled server for test purposes
+  
+
+You can turn your own machine into a broker by using Mosquitto: it allows your computer to understand the MQTT protocol. 
+
+```
+sudo apt-get install mosquitto
+sudo apt-get install mosquitto-clients
+```
+
+Here's a good documentation for MQTT, mosquitto, mosquitto-sub and mosquitto-pub: (http://mosquitto.org/man/mqtt-7.html)
+
+Here is the way you'll test your gateway locally:
+
+* In the terminal, run ```mosquitto -p 8000``` →  create an MQTT enabled server on the port 8000 of your Raspberry Pi.
+
+* In the marmitek config file (~/.config/marmitek-gw/conf.json), change the broker destination:
+```
+"server":"localhost" 
+"port": 8000
+```
+From now on, when you launch the marmitek gateway, all the data will be sent on your MQTT server on port 8000 or your Raspberry Pi.
+
+* In the terminal, run ```mosquitto_sub -t house/1/marmitek/sensor/A1 -p 8000 ``` →  subscribe to topic house/1/marmitek/sensor/A1 on your MQTT enabled server (located on port 8000). This will allow you to visualize what the UbiSMART broker recieves.
+(Not to be confused with what you see when you launch "marmitek-gw", which is the live visualization of the gate activity)
+
 
 
 ### Useful links:
