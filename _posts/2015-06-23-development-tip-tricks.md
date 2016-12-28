@@ -1,6 +1,6 @@
 ---
 layout: page
-title: "Development Tip & Tricks"
+title: "-- (empty) Development Tip & Tricks"
 category: technologies
 date: 2015-06-23 05:00:00
 ---

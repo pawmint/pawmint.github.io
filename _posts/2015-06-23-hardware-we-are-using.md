@@ -1,6 +1,6 @@
 ---
 layout: page
-title: "Hardware we are using"
+title: "-- (empty) Hardware we are using"
 category: technologies
 date: 2015-06-23 06:00:00
 ---

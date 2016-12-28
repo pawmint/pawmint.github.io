@@ -1,6 +1,6 @@
 ---
 layout: page
-title: "Other smaller codes"
+title: "-- (empty) Other smaller codes"
 category: hands_on_our_codes
 date: 2015-06-23 03:00:00
 ---
