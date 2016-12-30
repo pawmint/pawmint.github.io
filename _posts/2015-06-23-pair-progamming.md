@@ -44,4 +44,45 @@ If you are using Google Chrome, you can share your screen using Appear.in or Goo
 
 # Good practices of pair programming
 
-If you want to pairprog while having some freedom, you can create your own session inside an existing session. This will allow you to move around the windows without affecting other users and two users could then edit content on different tmux windows. To do this execute `tmux new-session -t <name of target session> -s <name of newly created session>`. When you work like this, you may want activate aggressive resize so that each user always gets the biggest screen size possible depending on who is sharing that screen: `tmux setw -g aggressive-resize on`.
+Common problem while connected to the same session is the window synchronisation. The users cannot edit different `tmux` windows. Let's get more freedom!
+
+**Open the session:** After connecting to the remote server execute:
+
+```shell
+tmux new-session -t <target session> -s <new session>
+```
+
+* `target session` is the name of the current session you want to connect
+
+* `new session` is a new identifier (e.g. append your name)
+
+When you work like this, you may want activate **aggressive resize** so that each user always gets the biggest screen size possible depending on who is sharing that screen: `tmux setw -g aggressive-resize on`.
+
+**Disconnect from the session:** as usual _PREFIX_ `d`, in our setup: `Ctrl+a d`
+
+**Reconnect to the session:** as usual
+
+```shell
+tmux attach -t <target session name>
+```
+
+**List sessions:**
+
+```shell
+tmux ls
+```
+
+**Cancel (close, kill) the session:** _PREFIX_ `:` and type "kill-session", in our setup: `Ctrl+a :kill-session` or command-line:
+
+```shell
+tmux kill-session                          # closes the current session
+tmux kill-session -t <target session name> # from any shell
+```
+
+For a **completely independent session** (no shared windows) you can copy the project:
+
+```shell
+tmuxinator copy <project name> <new name>
+```
+
+* `project name` is usually the same as the `target session`, to see project names use `tmuxinator list`
